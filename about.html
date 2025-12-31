@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
   <header>
     <h1>Max Zimmerman</h1>
     <nav>
@@ -49,5 +50,34 @@
     <a href="https://twitter.com/">Twitter</a>
     <a href="https://linkedin.com/">LinkedIn</a>
   </footer>
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      const current = root.getAttribute('data-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      if (current === 'dark' || (!current && prefersDark)) {
+        root.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        btn.textContent = '☽';
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        btn.textContent = '☀';
+      }
+    }
+
+    // Load saved theme and set icon
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const btn = document.querySelector('.theme-toggle');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      btn.textContent = saved === 'dark' ? '☀' : '☽';
+    } else {
+      btn.textContent = prefersDark ? '☀' : '☽';
+    }
+  </script>
 </body>
 </html>

@@ -9,15 +9,50 @@
   --max-width: 640px;
 }
 
-/* Dark mode support */
+/* Dark mode support - auto (system preference) */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --text-color: #e0e0e0;
     --text-muted: #999;
     --link-color: #e0e0e0;
     --link-hover: #6db3f2;
     --background: #1a1a1a;
   }
+}
+
+/* Dark mode - manual override */
+:root[data-theme="dark"] {
+  --text-color: #e0e0e0;
+  --text-muted: #999;
+  --link-color: #e0e0e0;
+  --link-hover: #6db3f2;
+  --background: #1a1a1a;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  background: none;
+  border: 1px solid var(--text-muted);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--link-hover);
+  border-color: var(--link-hover);
 }
 
 * {
