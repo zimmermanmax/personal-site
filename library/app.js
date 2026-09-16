@@ -73,16 +73,33 @@ function selectBook(id){
   const cover=$('book-cover');cover.replaceChildren();if(b.cover){const img=document.createElement('img');img.src=b.cover;img.alt=`Cover of ${b.title}`;img.addEventListener('error',()=>img.replaceWith(textElement('span','Cover unavailable','missing-cover')),{once:true});cover.append(img);}else cover.append(textElement('div','Original cover not yet recovered.','missing-cover'));
   const facts=$('book-facts');facts.replaceChildren();for(const [name,value] of [['Published',b.year],['Length',b.pages?`${b.pages} pages`:null],['Read',b.dateRead],['Added',b.dateAdded]]){if(value)facts.append(textElement('dt',name),textElement('dd',String(value)));}
   $('book-tags').textContent=b.tags?.length?b.tags.map(t=>t.replaceAll('_',' ')).join(' · '):'';
+  const description=$('book-description');description.replaceChildren();if(b.description?.reviewStatus==='reviewed'){description.append(textElement('h3','About this book'),textElement('p',b.description.text));const sources=document.createElement('details');sources.append(textElement('summary','Description sources'));for(const source of b.description.sources||[]){const a=textElement('a',source.title);a.href=source.url;a.target='_blank';a.rel='noopener noreferrer';sources.append(a);}description.append(sources);}
   const review=$('book-review');review.replaceChildren();if(b.review){if(b.spoiler){const button=textElement('button','Show review (contains spoilers)');button.onclick=()=>review.replaceChildren(textElement('p',b.review));review.append(button);}else review.append(textElement('p',b.review));}
   const slot=layout.find(x=>x.bookId===b.id);$('book-location').textContent=slot?`${curation.sectionLabels?.[slot.section]||'Classification pending'} · ${slot.access==='desk'?'Currently reading · Writing desk':slot.case===16&&slot.wall==='South'?'Upstairs favourites':slot.access==='gallery'?'Upper gallery':slot.access==='ladder'?'Ladder shelves':'Ground floor'}`:'Shelf location unavailable';
   const goodreads=$('goodreads-link');goodreads.href=`https://www.goodreads.com/book/show/${encodeURIComponent(b.id)}`;
   const readwise=$('readwise-link'),linked=currentReads.links?.[b.id];readwise.hidden=!linked;if(linked)readwise.href=linked.highlightsUrl;else readwise.removeAttribute('href');
   $('go-to-book').textContent=slot?.access==='desk'?'Take me to the desk':'Take me to its shelf';
   $('go-to-book').disabled=!ready;$('inspection-tip').textContent=ready?'Drag the book to turn it. Close to put it back.':'The collection is available here while the room loads.';
-  if(ready){inspection=createInspection(b,slot);camera.add(inspection.group);bookSpin=0;positionInspection();books.select(books.items.findIndex(s=>s.bookId===b.id));}
-  if(!$('book-dialog').open)$('book-dialog').show();document.body.classList.add('inspecting');$('put-back').focus();return {id:b.id,title:b.title,author:b.author,shelf:b.shelf};
+  if(ready){inspection=createInspection(b,slot);camera.add(inspection.group);bookSpin=0;$('turn-book').textContent='Show back';positionInspection();books.select(books.items.findIndex(s=>s.bookId===b.id));}
+  if(!$('book-dialog').open)$('book-dialog').show();document.body.classList.add('inspecting');$('book-view-controls').hidden=!ready;$('put-back').focus();return {id:b.id,title:b.title,author:b.author,shelf:b.shelf};
 }
-function positionInspection(){if(!inspection)return;const mobile=innerWidth<700;inspection.group.position.set(mobile?0:-.27,mobile?.22:0,-1.35);inspection.group.scale.setScalar(mobile?.9:1);}
+function positionInspection(){
+  if(!inspection)return;const mobile=innerWidth<700,expanded=document.body.classList.contains('book-enlarged');
+  inspection.group.position.set(expanded||mobile?0:-.27,expanded?0:mobile?.22:0,-1.35);
+  const visibleHeight=2*1.35*Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+  let scale=mobile?.9:1.32;
+  if(expanded){
+    const {width,height,depth}=inspection.dimensions,extent=new THREE.Vector3();
+    for(const x of [-1,1])for(const y of [-1,1])for(const z of [-1,1]){const p=new THREE.Vector3(x*width/2,y*height/2,z*depth/2).applyEuler(inspection.group.rotation);extent.max(new THREE.Vector3(Math.abs(p.x),Math.abs(p.y),Math.abs(p.z)));}
+    const top=mobile?136:80,bottom=mobile?24:84,availableHeight=Math.max(120,innerHeight-top-bottom);
+    const nominal=Math.min(availableHeight/innerHeight*visibleHeight/(2*extent.y),(innerWidth-36)/innerWidth*visibleHeight*camera.aspect/(2*extent.x));
+    // The near board is closer than the group's center. Include that depth
+    // when fitting the book, so wide/thick backs clear the header and controls.
+    scale=nominal/(1+nominal*extent.z/1.35);
+    inspection.group.position.y=(bottom-top)/2/innerHeight*visibleHeight;
+  }
+  inspection.group.scale.setScalar(scale);
+}
 function validLadderPose(point){
   if(Math.abs(point.y-getLadderY())>.0001||point.z<.75||point.z>4.051)return false;
   const expected=ladderView(point.y,point.z+EYE);
@@ -100,7 +117,7 @@ function boardLadder(destination,stage){
   feet=destination;ladderMode=true;seated=false;
 }
 function closeBook(restore=true){
-  if(selected===null)return;inspection?.dispose();inspection=null;selected=null;if(lightingRig)lightingRig.inspection.visible=previousFinish;books?.select(null);$('book-dialog').close();document.body.classList.remove('inspecting');
+  if(selected===null)return;inspection?.dispose();inspection=null;selected=null;if(lightingRig)lightingRig.inspection.visible=previousFinish;books?.select(null);$('book-dialog').close();document.body.classList.remove('inspecting','book-enlarged');$('book-view-controls').hidden=true;$('zoom-book').textContent='Enlarge book';
   if(restore&&returnView&&camera){if(returnView.seated||(returnView.ladderMode?validLadderPose(returnView.feet):validStandpoint(returnView.feet))){camera.position.copy(returnView.position);yaw=returnView.yaw;pitch=returnView.pitch;feet={...returnView.feet};seated=returnView.seated;ladderMode=returnView.ladderMode;updateLook();}else{feet={x:4.8,y:2.4,z:0};seated=false;ladderMode=false;camera.position.set(4.8,EYE,-2.4);setLook([3.8,2.5,-6.2]);}}returnView=null;canvas.focus({preventScroll:true});
 }
 function goToBook(){
@@ -157,6 +174,9 @@ document.querySelectorAll('[data-shelf]').forEach(b=>b.onclick=()=>{activeShelf=
 document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
 document.querySelectorAll('[data-place]').forEach(b=>b.onclick=()=>enterPlace(b.dataset.place));
 $('help').onclick=()=>{releaseMouse();$('help-dialog').showModal();};$('put-back').onclick=()=>closeBook();$('go-to-book').onclick=goToBook;$('ladder').onclick=toggleLadder;
+$('zoom-book').onclick=()=>{const expanded=document.body.classList.toggle('book-enlarged');$('zoom-book').textContent=expanded?'Return to details':'Enlarge book';positionInspection();};
+$('close-book-view').onclick=()=>closeBook();
+$('turn-book').onclick=()=>{if(!inspection)return;const back=Math.cos(inspection.group.rotation.y)>=0;inspection.group.rotation.set(-.035,back?Math.PI:0,0);$('turn-book').textContent=back?'Show front':'Show back';positionInspection();};
 $('walk').onclick=async()=>{if(!ready)return;if(selected!==null)closeBook();canvas.focus();try{await canvas.requestPointerLock();}catch{toast('Mouse lock is unavailable. Drag to look and use WASD to walk.');}};
 document.addEventListener('pointerlockchange',()=>{hoverDirty=true;const locked=document.pointerLockElement===canvas;$('crosshair').hidden=!locked;$('walk').textContent=locked?'Esc to release mouse':'Walk with mouse';});
 window.addEventListener('keydown',e=>{const isInput=/INPUT|TEXTAREA|SELECT/.test(e.target.tagName);if(e.key==='Escape'){closeBook();keys.clear();pendingKeyTaps.clear();return;}if(isInput)return;if(e.key==='/'){e.preventDefault();openSearch();return;}if($('search-dialog').open||$('help-dialog').open)return;const key=e.key.toLowerCase();if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright'].includes(key)){e.preventDefault();if(!keys.has(key))pendingKeyTaps.add(key);keys.add(key);}});
@@ -178,7 +198,7 @@ canvas.addEventListener('pointermove',e=>{if(!ready)return;hoverDirty=true;point
   const locked=document.pointerLockElement===canvas;if(!drag&&!locked)return;
   const dx=locked?e.movementX:e.clientX-drag.lastX,dy=locked?e.movementY:e.clientY-drag.lastY;
   if(drag){drag.lastX=e.clientX;drag.lastY=e.clientY;drag.moved+=Math.abs(dx)+Math.abs(dy);}
-  if(inspection){inspection.group.rotation.y+=dx*.008;inspection.group.rotation.x=THREE.MathUtils.clamp(inspection.group.rotation.x+dy*.008,-1.35,1.35);}
+  if(inspection){inspection.group.rotation.y+=dx*.008;inspection.group.rotation.x=THREE.MathUtils.clamp(inspection.group.rotation.x+dy*.008,-1.35,1.35);if(document.body.classList.contains('book-enlarged'))positionInspection();}
   else{const direction=locked?-1:1;yaw+=dx*.003*direction;pitch+=dy*.003*direction;updateLook();}
 });
 canvas.addEventListener('pointerup',e=>{if(!ready)return;if(drag&&drag.moved<8&&selected===null){pointer.set(e.clientX/innerWidth*2-1,-e.clientY/innerHeight*2+1);const index=pickBook();if(index!==null)selectBook(books.items[index].bookId);}drag=null;});
@@ -190,7 +210,8 @@ function pickBook(){
 
 async function initialize(){
   try{
-    const [data,locations,sections,reading]=await Promise.all([loadJSON('./data/books.json'),loadJSON('./data/layout-v19.json'),loadJSON('./data/curation-v15.json'),loadJSON('./data/current-reads.json')]);catalog=data.books;layout=locations.books;curation=sections;currentReads=reading;const ids=new Set(catalog.map(b=>b.id));if(ids.size!==967||layout.length!==967||new Set(layout.map(s=>s.bookId)).size!==967||layout.some(s=>!ids.has(s.bookId)))throw new Error('Catalog and shelf assignment mismatch');
+    const enrichmentLoad=loadJSON('./data/book-enrichment.json').catch(error=>{console.warn('Book descriptions and additional covers could not load; the original collection remains available.',error);return {};});
+    const [data,locations,sections,reading,enrichment]=await Promise.all([loadJSON('./data/books.json'),loadJSON('./data/layout-v23.json'),loadJSON('./data/curation-v15.json'),loadJSON('./data/current-reads.json'),enrichmentLoad]);catalog=data.books.map(b=>({...b,description:enrichment.descriptions?.[b.id],...(enrichment.covers?.[b.id]?.reviewStatus==='reviewed'?{cover:enrichment.covers[b.id].path}: {}),...(enrichment.normalizedCovers?.[b.id]?{cover:enrichment.normalizedCovers[b.id].path}:{})}));layout=locations.books;curation=sections;currentReads=reading;const ids=new Set(catalog.map(b=>b.id));if(ids.size!==967||layout.length!==967||new Set(layout.map(s=>s.bookId)).size!==967||layout.some(s=>!ids.has(s.bookId)))throw new Error('Catalog and shelf assignment mismatch');
     $('collection-count').textContent=`${catalog.length.toLocaleString()} books · A woodland sanctuary`;$('loading-search').hidden=false;renderResults();registerAgentTools();
   }catch(error){$('load-status').textContent='The collection could not load. Please refresh to try again.';console.error(error);return;}
   try{
@@ -211,7 +232,7 @@ async function initialize(){
       if(prepareBottleGlass(m)){o.castShadow=false;continue;}
       if(m.transmission>0||m.name.includes('Glass')){o.castShadow=false;m.depthWrite=false;if(/clear (panes?|window)/i.test(m.name)){m.transmission=0;m.transparent=true;m.opacity=previousFinish?.065:.09;m.roughness=previousFinish?.03:.06;}else if(m.transmission){m.transmission=.7;m.roughness=.06;}}
     }});scene.add(room);ladder=room.getObjectByName('WEB_MOVABLE_LADDER');hearthFire=createHearthFire(scene,room,{reducedMotion:reduced});
-    mechanisms=createMechanisms(room,manifest,nativeMotion,reduced);books=createBooks(scene,catalog,layout);movingBooks=attachMovingBooks(books,manifest,mechanisms);$('load-status').textContent='Snow is settling among the trees…';weather=await createWoodland(scene,release,ROOM_BASE);configureNavigation(mechanisms,weather.surfaces);syncMovingParts();try{lightingRig.prepareReflections();}catch(error){console.warn('Room reflections unavailable; direct lighting remains active.',error);}ready=true;enterPlace('entrance');
+    mechanisms=createMechanisms(room,manifest,nativeMotion,reduced);books=createBooks(scene,catalog,layout);await books.artwork.ready;movingBooks=attachMovingBooks(books,manifest,mechanisms);$('load-status').textContent='Snow is settling among the trees…';weather=await createWoodland(scene,release,ROOM_BASE);configureNavigation(mechanisms,weather.surfaces);syncMovingParts();try{lightingRig.prepareReflections();}catch(error){console.warn('Room reflections unavailable; direct lighting remains active.',error);}ready=true;enterPlace('entrance');
     if(materialReview){camera.fov=THREE.MathUtils.radToDeg(2*Math.atan((36/32/2)/camera.aspect));camera.updateProjectionMatrix();camera.position.set(4.10,1.42,-4.65);feet={x:4.10,y:4.65,z:0};setLook([6.40,.68,-6.88]);toast(previousFinish?'Previous finish · Same reading-corner viewpoint':'Reading corner · Material and light study');}
     renderer.shadowMap.needsUpdate=true;review.ready(renderer,()=>({feet:{...feet},camera:camera.position.toArray(),seated,ladderMode,ladderY:getLadderY(),mechanisms:{...mechanisms.current}}));
     $('load-progress').value=100;$('loading').hidden=true;

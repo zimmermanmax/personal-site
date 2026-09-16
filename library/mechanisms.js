@@ -130,6 +130,7 @@ export function attachMovingBooks(bookSet, manifest, mechanism) {
       mesh.instanceMatrix.needsUpdate = true;
       mesh.computeBoundingSphere(); mesh.computeBoundingBox();
     });
+    bookSet.artwork?.update(delta,ids);
     highlight(selectedIndex);
   }
   update();
