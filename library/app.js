@@ -49,7 +49,8 @@ function enterPlace(name){
   if(!place.seated){const h=floorAt(next.x,next.y,next.z);if(h===null){toast('This route is temporarily blocked.');return false;}next.z=h;}
   closeBook(false);releaseMouse();ladderMode=false;seated=!!place.seated;feet=next;
   camera.position.set(feet.x,feet.z+(seated?1.17:EYE),-feet.y);setLook([place.look[0],place.look[2],-place.look[1]]);
-  $('ladder').textContent='Ladder';toast(seated?'Settle in. Choose a place to stand up.':name==='arrival'?'Follow the path to the porch. Use Doors & TV to open the entrance.':'Drag to look. Select a book on the shelf.');review.event(name);return true;
+  if(name==='porch'){mechanisms.setTarget('foyer',true);syncMovingParts();}
+  $('ladder').textContent='Ladder';toast(name==='porch'?'Walk through the entrance into the foyer.':seated?'Settle in. Choose a place to stand up.':name==='arrival'?'Follow the path to the porch. Use Doors & TV to open the entrance.':'Drag to look. Select a book on the shelf.');review.event(name);return true;
 }
 function openSearch(){releaseMouse();if(!$('search-dialog').open)$('search-dialog').showModal();renderResults();$('query').focus();}
 function filteredBooks(query=$('query').value,shelf=activeShelf){const q=query.trim().toLocaleLowerCase();return catalog.filter(b=>(shelf==='all'||b.shelf===shelf)&&(!q||`${b.title} ${b.author} ${curation.sectionLabels?.[layout.find(s=>s.bookId===b.id)?.section]||''}`.toLocaleLowerCase().includes(q)));}

@@ -5,6 +5,7 @@ export const places={
   entrance:{position:[4.8,2.4,EYE],look:[3.8,6.2,2.5]},
   arrival:{position:[6.5,-18,1.584252136716107],look:[3.2,.6,4.2]},
   foyer:{position:[4.92,-1.25,EYE],look:[4.6,3.6,2.4]},
+  porch:{position:[4.92,-5.2,1.608991605638958],look:[4.92,-1.25,1.65]},
   reading:{position:[6.45,7.18,1.185096],look:[3.4,6.4,1.4],seated:true},
   gallery:{position:[2.2,1.05,4.85],look:[3.8,1.8,4.0]},
   writingDesk:{position:[3.2,3.05,1.65],look:[3.8,4.1,.88]},
