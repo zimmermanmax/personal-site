@@ -38,6 +38,8 @@ export function createMechanisms(room, manifest, nativeMotion, reducedMotion = f
     node.updateMatrix();
   }
   function applyControl(key) {
+    // Keep legacy group names and book-parent transforms, but never open the fixed case.
+    if (key === 'secret') current.secret = target.secret = 0;
     if (key === 'foyer') {
       const {node, rest} = groups.get(names.foyer[0]);
       node.position.copy(rest.p); node.scale.copy(rest.s);
@@ -50,13 +52,15 @@ export function createMechanisms(room, manifest, nativeMotion, reducedMotion = f
   }
   function setProgress(key, value) {
     if (!(key in current)) throw new Error('Unknown room mechanism');
-    current[key] = target[key] = clamp(value); applyControl(key); room.updateMatrixWorld(true);
+    current[key] = target[key] = key === 'secret' ? 0 : clamp(value); applyControl(key); room.updateMatrixWorld(true);
   }
+  setProgress('secret', 0);
   return {
     current, target,
     setProgress,
     setTarget(key, open) {
       if (!(key in current)) throw new Error('Unknown room mechanism');
+      if (key === 'secret') {setProgress(key, 0); return;}
       target[key] = open ? 1 : 0;
       if (reducedMotion) setProgress(key, target[key]);
     },
@@ -72,6 +76,10 @@ export function createMechanisms(room, manifest, nativeMotion, reducedMotion = f
     },
     update(dt, canAdvance = () => true) {
       let changed = false;
+      // Also repair callers that mutate the exposed legacy state directly.
+      if (current.secret !== 0 || target.secret !== 0) {
+        current.secret = target.secret = 0; applyControl('secret'); changed = true;
+      }
       for (const key of Object.keys(current)) {
         if (current[key] === target[key]) continue;
         if (!canAdvance(key)) continue;

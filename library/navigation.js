@@ -9,7 +9,6 @@ export const places={
   gallery:{position:[2.2,1.05,4.85],look:[3.8,1.8,4.0]},
   writingDesk:{position:[3.2,3.05,1.65],look:[3.8,4.1,.88]},
   upstairsReading:{position:[3.3075735569000244, 1.707573652267456, 4.349999904632568],look:[6.136000633239746, 4.5360002517700195, 4.170000076293945],seated:true},
-  secret:{position:[-1.8,2.2,4.85],look:[-.4,1.0,4.6],requires:'secret'},
   chess:{position:[3.55,6.6,EYE],look:[2.65,6.95,.7]},
 };
 export const LADDER={minY:2.4,maxY:7.65,initialY:3.5};
@@ -99,12 +98,10 @@ function outsideHeight(x,y){
 }
 export function floorAt(x,y,previous=0){
   if(dynamicBlocked(x,y,previous)||guardBlocked(x,y,previous))return null;
-  const secretOpen=motion?.current.secret===1&&motion?.target.secret===1;
   if(previous>2.82){
     if(upstairsFurniture.some(a=>rect(x,y,a)))return null;
     if(x>=1.53&&x<=5.67&&y>=1.62&&y<=2.82)return 3.2;
-    if(x<=.62&&x>=-.42&&y>=.584&&y<=1.546)return secretOpen?3.2:null;
-    if(x<-.42&&x>=-3.18&&y>=.23&&y<=2.87)return 3.2;
+    // The west wing and bookcase doorway are removed; the gallery starts at x=.62.
     if(x>=.62&&x<=8.72&&y>=.62&&y<=1.65)return 3.2;
     if(x>=7.3&&x<=8.35&&y>=1.83&&y<=2.76)return 3.2;
     if(x>=7.50&&x<=8.35&&y>=1.60&&y<=1.85)return 3.2;
@@ -141,7 +138,7 @@ export function stepPosition(pos,dx,dy){
 }
 export function validStandpoint(feet){const h=floorAt(feet.x,feet.y,feet.z);return h!==null&&Math.abs(h-feet.z)<=STEP;}
 export function mechanismClear(key,feet){
-  if(key==='secret')return feet.z+BODY<=3.2||!rect(feet.x,feet.y,[-2.15,.40,.16,1.85]);
+  if(key==='secret')return false; // Retained export group is now a fixed bookcase.
   if(key==='foyer')return feet.z>=2.27||!rect(feet.x,feet.y,[4.241,5.426,-2.958,-1.849]);
   if(key==='television')return feet.z>=1.843||!rect(feet.x,feet.y,[1.469,4.181,.438,1.486]);
   return true;

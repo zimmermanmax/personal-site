@@ -14,9 +14,9 @@ const parameters=new URLSearchParams(location.search);
 const review=createReviewDiagnostics(['127.0.0.1','localhost','[::1]'].includes(location.hostname)&&parameters.has('review'));
 const previousFinish=false;
 const materialReview=false;
-const ROOM_BASE='./assets/carriage-v18/room/';
+const ROOM_BASE='./assets/carriage-v19/room/';
 const CURRENT_ROOM_ASSET=ROOM_BASE+'carriage-room-v15.gltf';
-let lightingRig,mechanisms,movingBooks,curation={},pendingPlace=null;
+let lightingRig,mechanisms,movingBooks,curation={};
 const shelfNames={'to-read':'Want to read','currently-reading':'Currently reading','read':'Read'};
 let currentReads={links:{}},catalog=[],layout=[],books,room,ladder,renderer,scene,camera,weather,inspection;
 let selected=null,activeShelf='all',yaw=0,pitch=0,feet={x:4.8,y:2.4,z:0},seated=false,ladderMode=false,ready=false;
@@ -45,10 +45,6 @@ function sizeRenderer(){
 function enterPlace(name){
   if(!ready||!places[name])return false;
   const place=places[name];
-  if(place.requires==='secret'&&(mechanisms.current.secret!==1||mechanisms.target.secret!==1)){
-    if(!mechanismClear('secret',feet)){toast('Step clear of the bookcase before opening it.');return false;}
-    closeBook(false);pendingPlace=name;mechanisms.setTarget('secret',true);syncMovingParts();toast('Opening the bookcase…');return true;
-  }
   const next={x:place.position[0],y:place.position[1],z:place.position[2]-(place.seated?1.17:EYE)};
   if(!place.seated){const h=floorAt(next.x,next.y,next.z);if(h===null){toast('This route is temporarily blocked.');return false;}next.z=h;}
   closeBook(false);releaseMouse();ladderMode=false;seated=!!place.seated;feet=next;
@@ -110,17 +106,16 @@ function goToBook(){
   const index=books.items.findIndex(s=>s.bookId===selected),slot=layout.find(s=>s.bookId===selected);if(!slot)return false;
   let view=shelfView(slot),target=new THREE.Vector3().fromArray(slot.p);
   if(movingBooks.movingIds.has(slot.bookId)){
-    if(mechanisms.current.secret!==mechanisms.target.secret){toast('Wait for the bookcase to stop, then approach the shelf.');return false;}
     target=movingBooks.worldCenter(index,new THREE.Vector3());
     const normal=new THREE.Vector3(1,0,0).transformDirection(mechanisms.delta('SecretDoor_v11_Root'));
     const anchor=target.clone().addScaledVector(normal,1.2);
-    view={feet:{x:anchor.x,y:-anchor.z,z:3.2},ladder:false};
-    if(mechanisms.current.secret===0)view.feet.y=shelfView(slot).feet.y;
+    // The former door is fixed; retain its native parent transform and aisle approach.
+    view={feet:{x:anchor.x,y:shelfView(slot).feet.y,z:3.2},ladder:false};
   }
   if(!view.ladder&&!validStandpoint(view.feet)){
     const alternatives=slot.wall==='South'?[{...view.feet,y:view.feet.y+.8}]:[{...view.feet,x:1.98}];
     const safe=alternatives.find(validStandpoint);
-    if(!safe){toast('Close the bookcase or TV doors to approach this shelf.');return false;}view.feet=safe;
+    if(!safe){toast('This shelf approach is blocked. Try another viewpoint.');return false;}view.feet=safe;
   }
   const stage=view.ladder?safeLadderStage(view.feet.y):null;
   if(view.ladder&&!stage){toast('The ladder approach is blocked. Choose another shelf.');return false;}
@@ -136,7 +131,7 @@ function toggleLadder(){
 }
 function syncMovingParts(){
   if(!mechanisms)return;movingBooks?.update();refreshMechanisms();hoverDirty=true;if(renderer)renderer.shadowMap.needsUpdate=true;
-  for(const [id,key,label] of [['foyer-door','foyer','entrance door'],['secret-door','secret','secret bookcase'],['television','television','television']]){
+  for(const [id,key,label] of [['foyer-door','foyer','entrance door'],['television','television','television']]){
     const open=mechanisms.target[key]===1;$(id).textContent=(key==='television'?(open?'Conceal ':'Reveal '):(open?'Close ':'Open '))+label;$(id).setAttribute('aria-pressed',String(open));
   }
 }
@@ -154,7 +149,7 @@ function registerAgentTools(){
   ];for(const tool of tools){try{Promise.resolve(context.registerTool(tool,{signal:lifecycle.signal})).catch(()=>{});}catch{}}
 }
 
-$('foyer-door').onclick=()=>toggleMechanism('foyer');$('secret-door').onclick=()=>toggleMechanism('secret');$('television').onclick=()=>toggleMechanism('television');
+$('foyer-door').onclick=()=>toggleMechanism('foyer');$('television').onclick=()=>toggleMechanism('television');
 $('find').onclick=openSearch;$('loading-search').onclick=openSearch;$('query').addEventListener('input',renderResults);
 document.querySelectorAll('[data-shelf]').forEach(b=>b.onclick=()=>{activeShelf=b.dataset.shelf;document.querySelectorAll('[data-shelf]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderResults();});
 document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
@@ -193,11 +188,11 @@ function pickBook(){
 
 async function initialize(){
   try{
-    const [data,locations,sections,reading]=await Promise.all([loadJSON('./data/books.json'),loadJSON('./data/layout-v18.json'),loadJSON('./data/curation-v15.json'),loadJSON('./data/current-reads.json')]);catalog=data.books;layout=locations.books;curation=sections;currentReads=reading;const ids=new Set(catalog.map(b=>b.id));if(ids.size!==967||layout.length!==967||new Set(layout.map(s=>s.bookId)).size!==967||layout.some(s=>!ids.has(s.bookId)))throw new Error('Catalog and shelf assignment mismatch');
+    const [data,locations,sections,reading]=await Promise.all([loadJSON('./data/books.json'),loadJSON('./data/layout-v19.json'),loadJSON('./data/curation-v15.json'),loadJSON('./data/current-reads.json')]);catalog=data.books;layout=locations.books;curation=sections;currentReads=reading;const ids=new Set(catalog.map(b=>b.id));if(ids.size!==967||layout.length!==967||new Set(layout.map(s=>s.bookId)).size!==967||layout.some(s=>!ids.has(s.bookId)))throw new Error('Catalog and shelf assignment mismatch');
     $('collection-count').textContent=`${catalog.length.toLocaleString()} books · A woodland sanctuary`;$('loading-search').hidden=false;renderResults();registerAgentTools();
   }catch(error){$('load-status').textContent='The collection could not load. Please refresh to try again.';console.error(error);return;}
   try{
-    const [manifest,nativeMotion,instances,release]=await Promise.all([loadJSON(ROOM_BASE+'movement-manifest.json'),loadJSON(ROOM_BASE+'native-motion-samples.json'),loadJSON(ROOM_BASE+'catalog-instance-transforms-v15.json'),loadJSON('./data/release-v18.json')]);
+    const [manifest,nativeMotion,instances,release]=await Promise.all([loadJSON(ROOM_BASE+'movement-manifest.json'),loadJSON(ROOM_BASE+'native-motion-samples.json'),loadJSON(ROOM_BASE+'catalog-instance-transforms-v15.json'),loadJSON('./data/release-v19.json')]);
     if(manifest.sourceSha256!==nativeMotion.sourceSha256||manifest.sourceSha256!==instances.sourceSha256||manifest.sourceSha256!==release.roomSourceSha256||instances.books.length!==967||manifest.associatedDoorBookIds.length!==93)throw new Error('The room asset bundle is inconsistent');
     renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});sizeRenderer();renderer.shadowMap.enabled=true;renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=true;renderer.shadowMap.type=previousFinish?THREE.PCFSoftShadowMap:THREE.PCFShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.22;
     // Refraction is visible only through the small Endurance bottle. Keep the
@@ -224,7 +219,6 @@ function frame(now){
   if(!ready)return;const dt=lastTime?Math.min((now-lastTime)/1000,.05):0;lastTime=now;time+=dt;
   if(!document.hidden){
     if(mechanisms.update(dt,key=>mechanismClear(key,feet)))syncMovingParts();
-    if(pendingPlace&&mechanisms.current.secret===1){const place=pendingPlace;pendingPlace=null;enterPlace(place);}
     if(canWalk()){let f=(keys.has('w')||keys.has('arrowup')?1:0)-(keys.has('s')||keys.has('arrowdown')?1:0),s=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0);
       if(dt>0){walkBy(f,s,dt);pendingKeyTaps.clear();}
     }

@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "version": "v19-personal-shelves",
+  "sourceBlender": "library-personal-shelves-v19.blend",
+  "roomSourceSha256": "1176156068aa930c9d54a8de52845057e8f322c6d827e930fa2d8f6988e983ac",
+  "landscapeSourceSha256": "d5e7ac4bb2a8c94bf8a53c27f122b8d7811de0cc736f1f30f9c828aba05043f9",
+  "catalogCount": 967,
+  "movingDoorBookCount": 0,
+  "fixedBookcaseBookCount": 93,
+  "deskBookCount": 7,
+  "secretRoomRemoved": true,
+  "exteriorWingRemoved": true,
+  "artworkStatus": {
+    "installed": [
+      "webber",
+      "remington",
+      "nasmith"
+    ],
+    "reserved": [
+      "marston-paj4097"
+    ]
+  },
+  "files": {
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-02.bin": {
+      "sha256": "ed12f4ed8b9bc26fa7b188364831be6cadb3c5f334f2ce00a0fa27c540a704a3",
+      "bytes": 20894324
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-03.bin": {
+      "sha256": "bd771c38841aba759051e1203e2136b6b7131c669b30f4ee89914d4f39888040",
+      "bytes": 14392456
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-01.bin": {
+      "sha256": "a5ea407c1cce1c546ed2653c1bd90f0bf76f57065054464e798ab217647e5fbc",
+      "bytes": 20942980
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-00.bin": {
+      "sha256": "03cd7fac039a9dd4e3672128ca95d3ed832ee476bc75e06157ffc269846e8919",
+      "bytes": 20341968
+    },
+    "assets/carriage-v18/landscape/environment-manifest-v15.json": {
+      "sha256": "efc50c92cf9bbc85c706ce2b8adc62e7b2973385d0e403b378fa29b3c0eb9ee8",
+      "bytes": 94707
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15.gltf": {
+      "sha256": "460d50b5a0c2aafe862d3cda8e2e8e27196cd356ce656ca01888c84ab210612f",
+      "bytes": 1293932
+    },
+    "assets/carriage-v18/landscape/runtime-surfaces-v15.json": {
+      "sha256": "a8af0cacc6e28374529fbe71898f83e7aa2eb62fb72c6bb10ccd4dda956ca2de",
+      "bytes": 4637844
+    },
+    "data/current-reads.json": {
+      "sha256": "c4842e8453b9238ba63a3e23fa376424f4b89868e2c0e68796f901415d053adf",
+      "bytes": 527
+    },
+    "assets/carriage-v19/room/carriage-room-v15-buffer-03.bin": {
+      "sha256": "1a7185658634dd31b933d972eafb75f65a80e753f007bc3e68bf0efaf01967f2",
+      "bytes": 961488
+    },
+    "assets/carriage-v19/room/carriage-room-v15-buffer-02.bin": {
+      "sha256": "d4150e23d5c4eeefc7d9c316ff66e07001ec5fe8a7aa931aa9c1126d68aaaf44",
+      "bytes": 20920336
+    },
+    "assets/carriage-v19/room/carriage-room-v15-buffer-00.bin": {
+      "sha256": "4b3a90c68156a988fccac0d254ecefc640dde37febf4b12638e6bba53f650f31",
+      "bytes": 20691756
+    },
+    "assets/carriage-v19/room/native-motion-samples.json": {
+      "sha256": "accca8f6b7d4f16f0e8b4a8c76085e6a5697d355c0579c90e86c669621463775",
+      "bytes": 1103142
+    },
+    "assets/carriage-v19/room/carriage-room-v15-buffer-01.bin": {
+      "sha256": "ab09d054a923115838c57de208249a165ffd7334b366a5f5bd24a3b9c66cb8cd",
+      "bytes": 20341160
+    },
+    "assets/carriage-v19/room/carriage-room-v15.gltf": {
+      "sha256": "37905cfc5c4e131f79e70eb95d492185c54e737bed6d1eab0e062c11de1a2158",
+      "bytes": 1532431
+    },
+    "assets/carriage-v19/room/catalog-instance-transforms-v15.json": {
+      "sha256": "d7effdff1a02935d68095730f21a6cf45f73aa82f73bf54836027c1ebf9e80ef",
+      "bytes": 1820148
+    },
+    "assets/carriage-v19/room/environment-manifest-v15.json": {
+      "sha256": "3969cb9ee3dced9ef2a77e76ef452519a45ad900baa37f27d5fba78458370c3f",
+      "bytes": 346748
+    },
+    "assets/carriage-v19/room/movement-manifest.json": {
+      "sha256": "4eebd7f761b3493836a1f8469228a62e9e6d6d49dbde153633987046db0e92a1",
+      "bytes": 298315
+    },
+    "assets/carriage-v19/room/runtime-surfaces-v15.json": {
+      "sha256": "501f1caa2f121c31393fdb3e1c6f7c731d0d8c7c93e64541017ab467a2916890",
+      "bytes": 380
+    },
+    "data/layout-v19.json": {
+      "sha256": "778a3acbed59f114eb6bb85b9eee699e508dc23cd19b3aef2e39a921e4bce0ae",
+      "bytes": 2075114
+    }
+  },
+  "browserReviewed": false,
+  "published": false,
+  "changes": [
+    "Secret room and exterior wing removed; west timber facade and stone foundation finished",
+    "Former secret bookcase fixed closed with all 93 books preserved",
+    "Michigan State football helmet, walnut-and-brass clock, snowy owl, miniature vintage golf clubs and six shelf plants",
+    "18 right-aligned rows among 67 tightly packed shelves; subject and author order unchanged"
+  ],
+  "verification": {
+    "nativeSavedReopened": true,
+    "nativeViewsReviewed": true,
+    "decodedRoomGeometryAndImages": true,
+    "bookMappingValidated": true,
+    "staticModuleChecks": true,
+    "actualGeometryNavigationChecks": true,
+    "browserReviewed": false,
+    "gpuReviewed": false,
+    "httpAssetsVerified": true,
+    "deskPoseAndShelfPackingChecks": true,
+    "fixedBookcaseNativeMotionValidated": true
+  },
+  "limits": [
+    "Legacy internal group names retained for the fixed bookcase export; no secret-room interface or accessible room remains.",
+    "Native visual review and source/data checks do not replace browser visual/performance review."
+  ]
+}
