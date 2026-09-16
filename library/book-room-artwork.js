@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-const BASE='./assets/book-realism-v23/shelf/';
+const BASE='./assets/book-realism-v25/shelf/';
 export function createRoomArtwork(scene,items){
   const batches=[];
   const ready=(async()=>{const response=await fetch(BASE+'manifest.json');if(!response.ok)throw new Error('Book face artwork unavailable');const manifest=await response.json(),byId=new Map(items.map(s=>[s.bookId,s])),loader=new THREE.TextureLoader();
