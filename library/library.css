@@ -16,3 +16,8 @@ input,#book-dialog,#help-dialog,.result-title,#loading p{font-size:1rem}
 .result>span:not(.mini-cover){min-width:0}.result-title{overflow-wrap:anywhere}.result-shelf{white-space:normal;max-width:5.5rem;flex-shrink:0}
 #book-cover .missing-cover{font-size:.75rem}
 @media(max-width:700px){.controls>span{display:none}.controls{justify-content:flex-end}.places button{font-size:.875rem}.result{gap:.7rem}.result-shelf{font-size:.75rem}.filters button{font-size:.875rem}#hint{font-size:.875rem;max-width:calc(100vw - 2rem)}.room-actions{bottom:9rem}}
+
+/* Four clear destinations fit in one row, including compact screens. */
+.places{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:min(430px,calc(100vw - 2rem));overflow:visible}
+.places button{min-width:0;padding-inline:4px}
+@media(max-width:700px){.places button{font-size:clamp(.75rem,3.3vw,.875rem)}}

@@ -49,7 +49,7 @@ function enterPlace(name){
   if(!place.seated){const h=floorAt(next.x,next.y,next.z);if(h===null){toast('This route is temporarily blocked.');return false;}next.z=h;}
   closeBook(false);releaseMouse();ladderMode=false;seated=!!place.seated;feet=next;
   camera.position.set(feet.x,feet.z+(seated?1.17:EYE),-feet.y);setLook([place.look[0],place.look[2],-place.look[1]]);
-  $('ladder').textContent='Climb ladder';toast(seated?'Settle in. Choose a place to stand up.':name==='arrival'?'Follow the path to the porch. Use Doors & TV to open the entrance.':'Drag to look. Select a book on the shelf.');review.event(name);return true;
+  $('ladder').textContent='Ladder';toast(seated?'Settle in. Choose a place to stand up.':name==='arrival'?'Follow the path to the porch. Use Doors & TV to open the entrance.':'Drag to look. Select a book on the shelf.');review.event(name);return true;
 }
 function openSearch(){releaseMouse();if(!$('search-dialog').open)$('search-dialog').showModal();renderResults();$('query').focus();}
 function filteredBooks(query=$('query').value,shelf=activeShelf){const q=query.trim().toLocaleLowerCase();return catalog.filter(b=>(shelf==='all'||b.shelf===shelf)&&(!q||`${b.title} ${b.author} ${curation.sectionLabels?.[layout.find(s=>s.bookId===b.id)?.section]||''}`.toLocaleLowerCase().includes(q)));}
@@ -122,11 +122,11 @@ function goToBook(){
   closeBook(false);releaseMouse();seated=false;ladderMode=view.ladder;feet=view.feet;
   if(ladderMode)boardLadder(view.feet,stage);
   camera.position.set(feet.x,feet.z+EYE,-feet.y);setLook(target.toArray());
-  $('ladder').textContent=ladderMode?'Climb down':'Climb ladder';toast(ladderMode?'At the upper shelves · Choose Climb down to return.':slot.access==='desk'?'Your current read is on the desk. Select it to pick it up.':'Your book is here. Select its spine to pick it up.');review.event('book-shelf');return true;
+  $('ladder').textContent=ladderMode?'Climb down':'Ladder';toast(ladderMode?'At the upper shelves · Choose Climb down to return.':slot.access==='desk'?'Your current read is on the desk. Select it to pick it up.':'Your book is here. Select its spine to pick it up.');review.event('book-shelf');return true;
 }
 function toggleLadder(){
   if(!ready)return;closeBook(false);releaseMouse();
-  if(ladderMode){const next={x:1.98,y:getLadderY(),z:0};if(!validStandpoint(next)){toast('The ladder landing is blocked.');return;}ladderMode=false;seated=false;feet=next;camera.position.set(feet.x,EYE,-feet.y);setLook([.25,2.3,-feet.y]);$('ladder').textContent='Climb ladder';toast('Back on the library floor.');}
+  if(ladderMode){const next={x:1.98,y:getLadderY(),z:0};if(!validStandpoint(next)){toast('The ladder landing is blocked.');return;}ladderMode=false;seated=false;feet=next;camera.position.set(feet.x,EYE,-feet.y);setLook([.25,2.3,-feet.y]);$('ladder').textContent='Ladder';toast('Back on the library floor.');}
   else{const stage=safeLadderStage(feet.y);if(!stage){toast('The ladder approach is blocked.');return;}boardLadder(ladderView(stage.y),stage);camera.position.set(feet.x,feet.z+EYE,-feet.y);setLook([.22,4.8,-feet.y]);$('ladder').textContent='Climb down';toast('On the library ladder · Select a book, or climb down.');}
 }
 function syncMovingParts(){
