@@ -7,6 +7,7 @@ import { createBooks, createInspection } from './books.js';
 import { createWoodland } from './woodland.js';
 import { createLighting } from './lighting.js';
 import { visibleBookHit } from './selection.js';
+import {prepareBottleGlass,createHearthFire} from './fire-glass.js';
 import {createReviewDiagnostics} from './review-diagnostics.js';
 
 const $=id=>document.getElementById(id),canvas=$('room');
@@ -14,9 +15,9 @@ const parameters=new URLSearchParams(location.search);
 const review=createReviewDiagnostics(['127.0.0.1','localhost','[::1]'].includes(location.hostname)&&parameters.has('review'));
 const previousFinish=false;
 const materialReview=false;
-const ROOM_BASE='./assets/carriage-v19/room/';
+const ROOM_BASE='./assets/carriage-v20/room/';
 const CURRENT_ROOM_ASSET=ROOM_BASE+'carriage-room-v15.gltf';
-let lightingRig,mechanisms,movingBooks,curation={};
+let lightingRig,hearthFire,mechanisms,movingBooks,curation={};
 const shelfNames={'to-read':'Want to read','currently-reading':'Currently reading','read':'Read'};
 let currentReads={links:{}},catalog=[],layout=[],books,room,ladder,renderer,scene,camera,weather,inspection;
 let selected=null,activeShelf='all',yaw=0,pitch=0,feet={x:4.8,y:2.4,z:0},seated=false,ladderMode=false,ready=false;
@@ -193,7 +194,7 @@ async function initialize(){
     $('collection-count').textContent=`${catalog.length.toLocaleString()} books · A woodland sanctuary`;$('loading-search').hidden=false;renderResults();registerAgentTools();
   }catch(error){$('load-status').textContent='The collection could not load. Please refresh to try again.';console.error(error);return;}
   try{
-    const [manifest,nativeMotion,instances,release]=await Promise.all([loadJSON(ROOM_BASE+'movement-manifest.json'),loadJSON(ROOM_BASE+'native-motion-samples.json'),loadJSON(ROOM_BASE+'catalog-instance-transforms-v15.json'),loadJSON('./data/release-v19.json')]);
+    const [manifest,nativeMotion,instances,release]=await Promise.all([loadJSON(ROOM_BASE+'movement-manifest.json'),loadJSON(ROOM_BASE+'native-motion-samples.json'),loadJSON(ROOM_BASE+'catalog-instance-transforms-v15.json'),loadJSON('./data/release-v20.json')]);
     if(manifest.sourceSha256!==nativeMotion.sourceSha256||manifest.sourceSha256!==instances.sourceSha256||manifest.sourceSha256!==release.roomSourceSha256||instances.books.length!==967||manifest.associatedDoorBookIds.length!==93)throw new Error('The room asset bundle is inconsistent');
     renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});sizeRenderer();renderer.shadowMap.enabled=true;renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=true;renderer.shadowMap.type=previousFinish?THREE.PCFSoftShadowMap:THREE.PCFShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.22;
     // Refraction is visible only through the small Endurance bottle. Keep the
@@ -207,8 +208,9 @@ async function initialize(){
     room=gltf.scene;room.traverse(o=>{if(!o.isMesh)return;o.receiveShadow=true;o.castShadow=true;const materials=Array.isArray(o.material)?o.material:[o.material];for(const m of materials){
       applySnowMaterial(m);
       for(const key of ['map','roughnessMap','metalnessMap','normalMap'])if(m[key])m[key].anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
+      if(prepareBottleGlass(m)){o.castShadow=false;continue;}
       if(m.transmission>0||m.name.includes('Glass')){o.castShadow=false;m.depthWrite=false;if(/clear (panes?|window)/i.test(m.name)){m.transmission=0;m.transparent=true;m.opacity=previousFinish?.065:.09;m.roughness=previousFinish?.03:.06;}else if(m.transmission){m.transmission=.7;m.roughness=.06;}}
-    }});scene.add(room);ladder=room.getObjectByName('WEB_MOVABLE_LADDER');
+    }});scene.add(room);ladder=room.getObjectByName('WEB_MOVABLE_LADDER');hearthFire=createHearthFire(scene,room,{reducedMotion:reduced});
     mechanisms=createMechanisms(room,manifest,nativeMotion,reduced);books=createBooks(scene,catalog,layout);movingBooks=attachMovingBooks(books,manifest,mechanisms);$('load-status').textContent='Snow is settling among the trees…';weather=await createWoodland(scene,release,ROOM_BASE);configureNavigation(mechanisms,weather.surfaces);syncMovingParts();try{lightingRig.prepareReflections();}catch(error){console.warn('Room reflections unavailable; direct lighting remains active.',error);}ready=true;enterPlace('entrance');
     if(materialReview){camera.fov=THREE.MathUtils.radToDeg(2*Math.atan((36/32/2)/camera.aspect));camera.updateProjectionMatrix();camera.position.set(4.10,1.42,-4.65);feet={x:4.10,y:4.65,z:0};setLook([6.40,.68,-6.88]);toast(previousFinish?'Previous finish · Same reading-corner viewpoint':'Reading corner · Material and light study');}
     renderer.shadowMap.needsUpdate=true;review.ready(renderer,()=>({feet:{...feet},camera:camera.position.toArray(),seated,ladderMode,ladderY:getLadderY(),mechanisms:{...mechanisms.current}}));
@@ -224,6 +226,7 @@ function frame(now){
       if(dt>0){walkBy(f,s,dt);pendingKeyTaps.clear();}
     }
     if(!reduced)weather.update(dt,time);
+    hearthFire.update(time);
     if(selected===null&&hoverDirty&&now-lastHover>130&&!drag){lastHover=now;hoverDirty=false;const index=pickBook();if(index!==hovered){hovered=index;canvas.style.cursor=index===null?'grab':'pointer';if(index!==null)toast(`${books.items[index].book.title} · Select to pick up`,600);}}
     if(now>hintUntil)$('hint').textContent='';renderer.render(scene,camera);review.frame(now);
   }requestAnimationFrame(frame);

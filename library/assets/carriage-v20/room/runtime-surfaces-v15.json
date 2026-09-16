@@ -1,0 +1,7 @@
+{
+  "sourceSha256": "5f7a9965ba7840331e38db92fa89c617da33a170e6ff2d7a0e2c3e72ab60900b",
+  "coordinateConvention": "glTF metres Y-up",
+  "surfaces": {},
+  "trianglePolicy": "Full native evaluated surfaces, not simplified; shared vertices and triangle indices.",
+  "usage": "Terrain height/snow reset proposals; treat approach surfaces separately from woodland ground and water."
+}

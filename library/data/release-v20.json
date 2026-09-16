@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "version": "v20-cozy-details",
+  "sourceBlender": "library-cozy-details-v20.blend",
+  "roomSourceSha256": "5f7a9965ba7840331e38db92fa89c617da33a170e6ff2d7a0e2c3e72ab60900b",
+  "landscapeSourceSha256": "d5e7ac4bb2a8c94bf8a53c27f122b8d7811de0cc736f1f30f9c828aba05043f9",
+  "catalogCount": 967,
+  "fixedBookcaseBookCount": 93,
+  "deskBookCount": 7,
+  "secretRoomRemoved": true,
+  "exteriorWingRemoved": true,
+  "artworkStatus": {
+    "installed": [
+      "webber",
+      "remington",
+      "nasmith",
+      "hurley-endurance-photo"
+    ],
+    "planned": [
+      "marston-paj4097"
+    ]
+  },
+  "files": {
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-02.bin": {
+      "sha256": "ed12f4ed8b9bc26fa7b188364831be6cadb3c5f334f2ce00a0fa27c540a704a3",
+      "bytes": 20894324
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-03.bin": {
+      "sha256": "bd771c38841aba759051e1203e2136b6b7131c669b30f4ee89914d4f39888040",
+      "bytes": 14392456
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-01.bin": {
+      "sha256": "a5ea407c1cce1c546ed2653c1bd90f0bf76f57065054464e798ab217647e5fbc",
+      "bytes": 20942980
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-00.bin": {
+      "sha256": "03cd7fac039a9dd4e3672128ca95d3ed832ee476bc75e06157ffc269846e8919",
+      "bytes": 20341968
+    },
+    "assets/carriage-v18/landscape/environment-manifest-v15.json": {
+      "sha256": "efc50c92cf9bbc85c706ce2b8adc62e7b2973385d0e403b378fa29b3c0eb9ee8",
+      "bytes": 94707
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15.gltf": {
+      "sha256": "460d50b5a0c2aafe862d3cda8e2e8e27196cd356ce656ca01888c84ab210612f",
+      "bytes": 1293932
+    },
+    "assets/carriage-v18/landscape/runtime-surfaces-v15.json": {
+      "sha256": "a8af0cacc6e28374529fbe71898f83e7aa2eb62fb72c6bb10ccd4dda956ca2de",
+      "bytes": 4637844
+    },
+    "data/current-reads.json": {
+      "sha256": "c4842e8453b9238ba63a3e23fa376424f4b89868e2c0e68796f901415d053adf",
+      "bytes": 527
+    },
+    "data/layout-v19.json": {
+      "sha256": "778a3acbed59f114eb6bb85b9eee699e508dc23cd19b3aef2e39a921e4bce0ae",
+      "bytes": 2075114
+    },
+    "assets/carriage-v20/room/carriage-room-v15-buffer-03.bin": {
+      "sha256": "46925679c4fa4d66958a55ce730d59d0dcbe7930bbc02488f655a2701756053a",
+      "bytes": 8719240
+    },
+    "assets/carriage-v20/room/carriage-room-v15-buffer-02.bin": {
+      "sha256": "ed2a14c070a8ea62caf83d59b5675c3f59fa283bbfb45ba829117560f4631871",
+      "bytes": 19774284
+    },
+    "assets/carriage-v20/room/carriage-room-v15-buffer-00.bin": {
+      "sha256": "3f444bc86c3d93858ff30b80da84459164feeaea1ecabaa632cb01551c7834e9",
+      "bytes": 20931084
+    },
+    "assets/carriage-v20/room/native-motion-samples.json": {
+      "sha256": "4bd48b791a0f67665977a8b27349377b87655174478aa8e0571e440519e1fbe7",
+      "bytes": 1103142
+    },
+    "assets/carriage-v20/room/carriage-room-v15-buffer-01.bin": {
+      "sha256": "fc7f5e9016dfabbe47bccf4e70c4cdf095774ce6f0c7a1769f9e6f439def44d7",
+      "bytes": 20813132
+    },
+    "assets/carriage-v20/room/carriage-room-v15.gltf": {
+      "sha256": "ab225a126888d610c93347d8722b5c798b6da5b93f1feb8f42f99809cca82ff0",
+      "bytes": 1665121
+    },
+    "assets/carriage-v20/room/catalog-instance-transforms-v15.json": {
+      "sha256": "63dadfee3e9f78a54f54b22ad2548f21114bbb11667e2909918ef597012892f0",
+      "bytes": 1820148
+    },
+    "assets/carriage-v20/room/environment-manifest-v15.json": {
+      "sha256": "756fb19bad7906f3da5800acf33a8493737b29d4b93073566559dbdc83e65421",
+      "bytes": 494829
+    },
+    "assets/carriage-v20/room/movement-manifest.json": {
+      "sha256": "a4e82c034beef5cb11d8a0e382444d739f0d66f87b61c8f9597d279dbab5505b",
+      "bytes": 298311
+    },
+    "assets/carriage-v20/room/runtime-surfaces-v15.json": {
+      "sha256": "88aa41c0298de38ad54bfcc89871b6e646431eca9296cdc4320502ac60a2def1",
+      "bytes": 380
+    }
+  },
+  "browserReviewed": false,
+  "changes": [
+    "Clear neutral Endurance bottle glass without the old opacity override",
+    "Lit hearth with glowing embers, curved flame forms and gentle light variation",
+    "User-selected Frank Hurley Endurance photograph fills frame above television",
+    "Nine additional potted shelf plants",
+    "Display basketball with stylized Tom Izzo inscription",
+    "Large brass and timber telescope in the upstairs corner"
+  ],
+  "verification": {
+    "nativeSavedReopened": true,
+    "nativeViewsReviewed": true,
+    "decodedRoomGeometryAndImages": true,
+    "bookMappingValidated": true,
+    "staticModuleChecks": false,
+    "actualGeometryNavigationChecks": false,
+    "browserReviewed": false
+  },
+  "limits": [
+    "Tom Izzo inscription is stylized decorative lettering on a virtual object, not a traced or authenticated autograph.",
+    "The framed Endurance image is Frank Hurley photography; it is not the previously planned Marston painting.",
+    "Blender and browser lighting differ; exported geometry and image integrity do not prove identical rendering."
+  ]
+}
