@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "bookIds": [
+    "86525",
+    "55378851",
+    "61089520",
+    "223035170",
+    "7604",
+    "210193174",
+    "20821221"
+  ],
+  "selectionSource": "Goodreads currently-reading shelf from existing catalog; user clarification pending",
+  "readwiseCheckedAt": "2026-09-16T00:12:09Z",
+  "automaticWebsiteSync": false,
+  "links": {
+    "55378851": {
+      "readwiseId": "61144270",
+      "highlightsUrl": "https://readwise.io/bookreview/61144270",
+      "lastHighlightAt": "2026-09-01T04:56:00Z"
+    }
+  }
+}

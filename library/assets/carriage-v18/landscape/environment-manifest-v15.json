@@ -1,0 +1,3127 @@
+{
+  "schemaVersion": "personal-library-environment-15",
+  "scope": "landscape",
+  "coordinateConvention": "glTF metres Y-up; Blender (x,y,z) becomes (x,z,-y)",
+  "roofShelter": {
+    "status": "Current v15 geometry-derived snow shelter metadata; runtime separately tested",
+    "coordinates": "Blender meters Z-up; glTF meters Y-up via (x,y,z)->(x,z,-y).",
+    "method": "Union of upward-facing evaluated roof triangles, preserving the current west-roof notch and redesigned porch/side-wing footprints.",
+    "interpretation": "Proposed downward shelter columns from each actual roof triangle to the associated foundation minimum. Interpolate roof height per triangle; do not use group AABBs/convex hulls as exact masks.",
+    "limitations": [
+      "No wind-driven snowfall trajectory implementation.",
+      "Architectural dimensions remain virtual design proposals.",
+      "No added lateral safety padding; any runtime padding must be explicit."
+    ],
+    "groups": [
+      {
+        "id": "main_library",
+        "parts": [
+          {
+            "sourceObject": "Carriage v15 | main west roof",
+            "sourceData": "Carriage v15 | main west roof mesh.001",
+            "evaluatedBoundsBlender": {
+              "min": [
+                -0.8999999761581421,
+                -0.8999999761581421,
+                6.414999961853027
+              ],
+              "max": [
+                4.5,
+                9.300000190734863,
+                9.5
+              ]
+            },
+            "upwardTriangleCount": 6,
+            "upwardTrianglesBlender": [
+              [
+                [
+                  -0.2199999988079071,
+                  3.6449999809265137,
+                  6.895259380340576
+                ],
+                [
+                  -0.8999999761581421,
+                  3.6449999809265137,
+                  6.519999980926514
+                ],
+                [
+                  -0.8999999761581421,
+                  -0.8999999761581421,
+                  6.519999980926514
+                ]
+              ],
+              [
+                [
+                  -0.8999999761581421,
+                  -0.8999999761581421,
+                  6.519999980926514
+                ],
+                [
+                  4.5,
+                  -0.8999999761581421,
+                  9.5
+                ],
+                [
+                  4.5,
+                  9.300000190734863,
+                  9.5
+                ]
+              ],
+              [
+                [
+                  4.5,
+                  9.300000190734863,
+                  9.5
+                ],
+                [
+                  -0.8999999761581421,
+                  9.300000190734863,
+                  6.519999980926514
+                ],
+                [
+                  -0.8999999761581421,
+                  4.90500020980835,
+                  6.519999980926514
+                ]
+              ],
+              [
+                [
+                  4.5,
+                  9.300000190734863,
+                  9.5
+                ],
+                [
+                  -0.8999999761581421,
+                  4.90500020980835,
+                  6.519999980926514
+                ],
+                [
+                  -0.2199999988079071,
+                  4.90500020980835,
+                  6.895259380340576
+                ]
+              ],
+              [
+                [
+                  -0.2199999988079071,
+                  3.6449999809265137,
+                  6.895259380340576
+                ],
+                [
+                  -0.8999999761581421,
+                  -0.8999999761581421,
+                  6.519999980926514
+                ],
+                [
+                  4.5,
+                  9.300000190734863,
+                  9.5
+                ]
+              ],
+              [
+                [
+                  4.5,
+                  9.300000190734863,
+                  9.5
+                ],
+                [
+                  -0.2199999988079071,
+                  4.90500020980835,
+                  6.895259380340576
+                ],
+                [
+                  -0.2199999988079071,
+                  3.6449999809265137,
+                  6.895259380340576
+                ]
+              ]
+            ],
+            "upwardTrianglesGltf": [
+              [
+                [
+                  -0.2199999988079071,
+                  6.895259380340576,
+                  -3.6449999809265137
+                ],
+                [
+                  -0.8999999761581421,
+                  6.519999980926514,
+                  -3.6449999809265137
+                ],
+                [
+                  -0.8999999761581421,
+                  6.519999980926514,
+                  0.8999999761581421
+                ]
+              ],
+              [
+                [
+                  -0.8999999761581421,
+                  6.519999980926514,
+                  0.8999999761581421
+                ],
+                [
+                  4.5,
+                  9.5,
+                  0.8999999761581421
+                ],
+                [
+                  4.5,
+                  9.5,
+                  -9.300000190734863
+                ]
+              ],
+              [
+                [
+                  4.5,
+                  9.5,
+                  -9.300000190734863
+                ],
+                [
+                  -0.8999999761581421,
+                  6.519999980926514,
+                  -9.300000190734863
+                ],
+                [
+                  -0.8999999761581421,
+                  6.519999980926514,
+                  -4.90500020980835
+                ]
+              ],
+              [
+                [
+                  4.5,
+                  9.5,
+                  -9.300000190734863
+                ],
+                [
+                  -0.8999999761581421,
+                  6.519999980926514,
+                  -4.90500020980835
+                ],
+                [
+                  -0.2199999988079071,
+                  6.895259380340576,
+                  -4.90500020980835
+                ]
+              ],
+              [
+                [
+                  -0.2199999988079071,
+                  6.895259380340576,
+                  -3.6449999809265137
+                ],
+                [
+                  -0.8999999761581421,
+                  6.519999980926514,
+                  0.8999999761581421
+                ],
+                [
+                  4.5,
+                  9.5,
+                  -9.300000190734863
+                ]
+              ],
+              [
+                [
+                  4.5,
+                  9.5,
+                  -9.300000190734863
+                ],
+                [
+                  -0.2199999988079071,
+                  6.895259380340576,
+                  -4.90500020980835
+                ],
+                [
+                  -0.2199999988079071,
+                  6.895259380340576,
+                  -3.6449999809265137
+                ]
+              ]
+            ],
+            "projectedConvexHullXYForReviewOnly": [
+              [
+                -0.8999999761581421,
+                -0.8999999761581421
+              ],
+              [
+                4.5,
+                -0.8999999761581421
+              ],
+              [
+                4.5,
+                9.300000190734863
+              ],
+              [
+                -0.8999999761581421,
+                9.300000190734863
+              ]
+            ]
+          },
+          {
+            "sourceObject": "Carriage v15 | main east roof",
+            "sourceData": "Carriage v15 | main east roof mesh",
+            "evaluatedBoundsBlender": {
+              "min": [
+                4.5,
+                -0.8999999761581421,
+                6.414999961853027
+              ],
+              "max": [
+                9.899999618530273,
+                9.300000190734863,
+                9.5
+              ]
+            },
+            "upwardTriangleCount": 2,
+            "upwardTrianglesBlender": [
+              [
+                [
+                  4.5,
+                  -0.8999999761581421,
+                  9.5
+                ],
+                [
+                  9.899999618530273,
+                  -0.8999999761581421,
+                  6.519999980926514
+                ],
+                [
+                  9.899999618530273,
+                  9.300000190734863,
+                  6.519999980926514
+                ]
+              ],
+              [
+                [
+                  4.5,
+                  -0.8999999761581421,
+                  9.5
+                ],
+                [
+                  9.899999618530273,
+                  9.300000190734863,
+                  6.519999980926514
+                ],
+                [
+                  4.5,
+                  9.300000190734863,
+                  9.5
+                ]
+              ]
+            ],
+            "upwardTrianglesGltf": [
+              [
+                [
+                  4.5,
+                  9.5,
+                  0.8999999761581421
+                ],
+                [
+                  9.899999618530273,
+                  6.519999980926514,
+                  0.8999999761581421
+                ],
+                [
+                  9.899999618530273,
+                  6.519999980926514,
+                  -9.300000190734863
+                ]
+              ],
+              [
+                [
+                  4.5,
+                  9.5,
+                  0.8999999761581421
+                ],
+                [
+                  9.899999618530273,
+                  6.519999980926514,
+                  -9.300000190734863
+                ],
+                [
+                  4.5,
+                  9.5,
+                  -9.300000190734863
+                ]
+              ]
+            ],
+            "projectedConvexHullXYForReviewOnly": [
+              [
+                4.5,
+                -0.8999999761581421
+              ],
+              [
+                9.899999618530273,
+                -0.8999999761581421
+              ],
+              [
+                9.899999618530273,
+                9.300000190734863
+              ],
+              [
+                4.5,
+                9.300000190734863
+              ]
+            ]
+          }
+        ],
+        "boundsBlender": {
+          "min": [
+            -0.8999999761581421,
+            -0.8999999761581421,
+            6.519999980926514
+          ],
+          "max": [
+            9.899999618530273,
+            9.300000190734863,
+            9.5
+          ]
+        },
+        "boundsGltf": {
+          "min": [
+            -0.8999999761581421,
+            6.519999980926514,
+            -9.300000190734863
+          ],
+          "max": [
+            9.899999618530273,
+            9.5,
+            0.8999999761581421
+          ]
+        },
+        "columnLowerZBlenderProposal": -0.3100000023841858,
+        "lowerBoundSource": "Retreat v11 | main foundation"
+      },
+      {
+        "id": "side_wing",
+        "parts": [
+          {
+            "sourceObject": "Carriage v15 | side wing roof",
+            "sourceData": "Carriage v15 | side wing roof mesh",
+            "evaluatedBoundsBlender": {
+              "min": [
+                -4.050000190734863,
+                -0.6499999761581421,
+                6.034999847412109
+              ],
+              "max": [
+                -0.11999999731779099,
+                3.450000047683716,
+                6.400000095367432
+              ]
+            },
+            "upwardTriangleCount": 2,
+            "upwardTrianglesBlender": [
+              [
+                [
+                  -4.050000190734863,
+                  -0.6499999761581421,
+                  6.099999904632568
+                ],
+                [
+                  -0.11999999731779099,
+                  -0.6499999761581421,
+                  6.400000095367432
+                ],
+                [
+                  -0.11999999731779099,
+                  3.450000047683716,
+                  6.400000095367432
+                ]
+              ],
+              [
+                [
+                  -4.050000190734863,
+                  -0.6499999761581421,
+                  6.099999904632568
+                ],
+                [
+                  -0.11999999731779099,
+                  3.450000047683716,
+                  6.400000095367432
+                ],
+                [
+                  -4.050000190734863,
+                  3.450000047683716,
+                  6.099999904632568
+                ]
+              ]
+            ],
+            "upwardTrianglesGltf": [
+              [
+                [
+                  -4.050000190734863,
+                  6.099999904632568,
+                  0.6499999761581421
+                ],
+                [
+                  -0.11999999731779099,
+                  6.400000095367432,
+                  0.6499999761581421
+                ],
+                [
+                  -0.11999999731779099,
+                  6.400000095367432,
+                  -3.450000047683716
+                ]
+              ],
+              [
+                [
+                  -4.050000190734863,
+                  6.099999904632568,
+                  0.6499999761581421
+                ],
+                [
+                  -0.11999999731779099,
+                  6.400000095367432,
+                  -3.450000047683716
+                ],
+                [
+                  -4.050000190734863,
+                  6.099999904632568,
+                  -3.450000047683716
+                ]
+              ]
+            ],
+            "projectedConvexHullXYForReviewOnly": [
+              [
+                -4.050000190734863,
+                -0.6499999761581421
+              ],
+              [
+                -0.11999999731779099,
+                -0.6499999761581421
+              ],
+              [
+                -0.11999999731779099,
+                3.450000047683716
+              ],
+              [
+                -4.050000190734863,
+                3.450000047683716
+              ]
+            ]
+          }
+        ],
+        "boundsBlender": {
+          "min": [
+            -4.050000190734863,
+            -0.6499999761581421,
+            6.099999904632568
+          ],
+          "max": [
+            -0.11999999731779099,
+            3.450000047683716,
+            6.400000095367432
+          ]
+        },
+        "boundsGltf": {
+          "min": [
+            -4.050000190734863,
+            6.099999904632568,
+            -3.450000047683716
+          ],
+          "max": [
+            -0.11999999731779099,
+            6.400000095367432,
+            0.6499999761581421
+          ]
+        },
+        "columnLowerZBlenderProposal": -0.28999999165534973,
+        "lowerBoundSource": "Retreat v11 | side wing foundation"
+      },
+      {
+        "id": "porch_and_foyer",
+        "parts": [
+          {
+            "sourceObject": "Carriage v15 | porch roof",
+            "sourceData": "Carriage v15 | porch roof mesh",
+            "evaluatedBoundsBlender": {
+              "min": [
+                3.0399999618530273,
+                -4.550000190734863,
+                2.75
+              ],
+              "max": [
+                6.820000171661377,
+                -0.25999999046325684,
+                3.4200000762939453
+              ]
+            },
+            "upwardTriangleCount": 2,
+            "upwardTrianglesBlender": [
+              [
+                [
+                  3.0399999618530273,
+                  -4.550000190734863,
+                  2.859999895095825
+                ],
+                [
+                  6.820000171661377,
+                  -4.550000190734863,
+                  2.859999895095825
+                ],
+                [
+                  6.820000171661377,
+                  -0.25999999046325684,
+                  3.4200000762939453
+                ]
+              ],
+              [
+                [
+                  3.0399999618530273,
+                  -4.550000190734863,
+                  2.859999895095825
+                ],
+                [
+                  6.820000171661377,
+                  -0.25999999046325684,
+                  3.4200000762939453
+                ],
+                [
+                  3.0399999618530273,
+                  -0.25999999046325684,
+                  3.4200000762939453
+                ]
+              ]
+            ],
+            "upwardTrianglesGltf": [
+              [
+                [
+                  3.0399999618530273,
+                  2.859999895095825,
+                  4.550000190734863
+                ],
+                [
+                  6.820000171661377,
+                  2.859999895095825,
+                  4.550000190734863
+                ],
+                [
+                  6.820000171661377,
+                  3.4200000762939453,
+                  0.25999999046325684
+                ]
+              ],
+              [
+                [
+                  3.0399999618530273,
+                  2.859999895095825,
+                  4.550000190734863
+                ],
+                [
+                  6.820000171661377,
+                  3.4200000762939453,
+                  0.25999999046325684
+                ],
+                [
+                  3.0399999618530273,
+                  3.4200000762939453,
+                  0.25999999046325684
+                ]
+              ]
+            ],
+            "projectedConvexHullXYForReviewOnly": [
+              [
+                3.0399999618530273,
+                -4.550000190734863
+              ],
+              [
+                6.820000171661377,
+                -4.550000190734863
+              ],
+              [
+                6.820000171661377,
+                -0.25999999046325684
+              ],
+              [
+                3.0399999618530273,
+                -0.25999999046325684
+              ]
+            ]
+          }
+        ],
+        "boundsBlender": {
+          "min": [
+            3.0399999618530273,
+            -4.550000190734863,
+            2.859999895095825
+          ],
+          "max": [
+            6.820000171661377,
+            -0.25999999046325684,
+            3.4200000762939453
+          ]
+        },
+        "boundsGltf": {
+          "min": [
+            3.0399999618530273,
+            2.859999895095825,
+            0.25999999046325684
+          ],
+          "max": [
+            6.820000171661377,
+            3.4200000762939453,
+            4.550000190734863
+          ]
+        },
+        "columnLowerZBlenderProposal": -0.25999999046325684,
+        "lowerBoundSource": "Retreat v11 | foyer foundation"
+      }
+    ]
+  },
+  "terrainSurfaceAsset": "runtime-surfaces-v15.json",
+  "terrainSurfaceNames": [
+    "Arrival v12 | court end returns beside entrance",
+    "Arrival v12 | entrance paving slab 1",
+    "Arrival v12 | entrance paving slab 2",
+    "Arrival v12 | entrance paving slab 3",
+    "Arrival v12 | entrance paving slab 4",
+    "Arrival v12 | gravel shoulders meeting earth",
+    "Arrival v12 | grounded entrance step",
+    "Arrival v12 | rounded gravel arrival court",
+    "Arrival v12 | terrain fitted gravel drive",
+    "Retreat v11 | south approach ground continuation",
+    "Woodland_ForestFloor",
+    "Woodland_SoftCreekBanks"
+  ],
+  "sourceToBatchNodes": {
+    "Arrival v12 | court end returns beside entrance": [
+      "CARRIAGE_LANDSCAPE_BATCH_000"
+    ],
+    "Arrival v12 | entrance paving slab 1": [
+      "CARRIAGE_LANDSCAPE_BATCH_001"
+    ],
+    "Arrival v12 | entrance paving slab 2": [
+      "CARRIAGE_LANDSCAPE_BATCH_001"
+    ],
+    "Arrival v12 | entrance paving slab 3": [
+      "CARRIAGE_LANDSCAPE_BATCH_001"
+    ],
+    "Arrival v12 | entrance paving slab 4": [
+      "CARRIAGE_LANDSCAPE_BATCH_001"
+    ],
+    "Arrival v12 | gravel shoulders meeting earth": [
+      "CARRIAGE_LANDSCAPE_BATCH_000"
+    ],
+    "Arrival v12 | grounded entrance step": [
+      "CARRIAGE_LANDSCAPE_BATCH_001"
+    ],
+    "Arrival v12 | rounded gravel arrival court": [
+      "CARRIAGE_LANDSCAPE_BATCH_000"
+    ],
+    "Arrival v12 | small gravel aggregate": [
+      "CARRIAGE_LANDSCAPE_BATCH_002",
+      "CARRIAGE_LANDSCAPE_BATCH_003",
+      "CARRIAGE_LANDSCAPE_BATCH_004"
+    ],
+    "Arrival v12 | terrain fitted gravel drive": [
+      "CARRIAGE_LANDSCAPE_BATCH_000"
+    ],
+    "ArrivalCanopy_v13_A_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "ArrivalCanopy_v13_B_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "ArrivalCanopy_v13_Tree4_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "Canopy_v11_SupportedBranches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "DenseForest_v18_arrival_153": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_154": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_155": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_156": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_arrival_157": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_158": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_159": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_160": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_arrival_161": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_162": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_163": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_arrival_164": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_arrival_165": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_166": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_167": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_168": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_169": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_arrival_170": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_171": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_172": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_173": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_174": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_175": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_arrival_176": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_arrival_177": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_arrival_178": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_098": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_099": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_100": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_101": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_102": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_103": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_104": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_105": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_106": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_107": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_108": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_middle_109": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_110": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_111": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_112": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_113": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_114": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_115": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_middle_116": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_117": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_middle_118": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_middle_119": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_120": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_121": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_122": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_123": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_124": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_125": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_126": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_127": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_128": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_129": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_middle_130": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_131": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_132": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_middle_133": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_134": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_135": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_136": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_137": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_138": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_139": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_140": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_middle_141": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_142": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_143": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_144": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_145": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_middle_146": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_147": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_148": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_149": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_middle_150": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_middle_151": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_middle_152": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_000": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_001": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_002": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_003": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_004": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_005": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_006": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_007": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_008": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_009": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_010": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_011": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_012": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_013": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_014": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_015": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_016": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_017": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_018": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_019": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_020": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_021": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_022": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_023": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_024": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_025": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_026": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_027": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_028": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_029": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_030": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_031": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_032": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_033": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_034": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_035": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_036": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_037": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_038": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_039": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_040": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_041": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_042": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_043": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_044": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_045": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_046": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_047": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_048": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_049": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_050": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_051": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_052": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_053": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_054": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_055": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_056": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_057": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_058": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_059": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_060": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_061": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_062": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_063": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_064": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_065": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_066": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_067": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_068": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_069": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_070": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_071": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_072": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_073": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_074": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_075": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_076": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_077": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_078": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_079": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_080": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_081": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_082": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_083": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_084": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_085": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_086": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_087": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_088": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_089": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_outer_090": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_091": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_092": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "DenseForest_v18_outer_093": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_094": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_011",
+      "CARRIAGE_LANDSCAPE_BATCH_012",
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "DenseForest_v18_outer_095": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_096": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_outer_097": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_179": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_180": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_181": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_182": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_183": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_184": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_185": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_186": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_187": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_188": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_189": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_190": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_191": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_192": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_193": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_194": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_195": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_196": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_197": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_198": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_199": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_200": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_201": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_202": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_203": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_204": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_205": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_206": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_207": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_208": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_209": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_210": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_211": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_212": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_213": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_214": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_215": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "DenseForest_v18_screen_216": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_217": [
+      "CARRIAGE_LANDSCAPE_BATCH_006",
+      "CARRIAGE_LANDSCAPE_BATCH_007",
+      "CARRIAGE_LANDSCAPE_BATCH_008",
+      "CARRIAGE_LANDSCAPE_BATCH_009",
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "DenseForest_v18_screen_218": [
+      "CARRIAGE_LANDSCAPE_BATCH_010",
+      "CARRIAGE_LANDSCAPE_BATCH_015",
+      "CARRIAGE_LANDSCAPE_BATCH_016",
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_E01_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E01_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_E01_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_E01_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_E01_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E01_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E02_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E02_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_E02_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_E02_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_E02_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E02_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E03_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E03_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_E03_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_E03_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_E03_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E03_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E04_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E04_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_015"
+    ],
+    "NorthernMichigan_v17_E04_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_016"
+    ],
+    "NorthernMichigan_v17_E04_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_E04_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E04_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E05_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E05_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_E05_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_E05_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_E05_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E05_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E06_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E06_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_E06_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_E06_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_E06_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E06_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E07_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E07_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_E07_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_E07_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_E07_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E07_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E08_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E08_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_E08_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_E08_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_E08_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E08_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E09_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_E09_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_E09_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_E09_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_E09_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_E09_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Hero0_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Hero0_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Hero0_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_014"
+    ],
+    "NorthernMichigan_v17_Hero1_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Hero1_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Hero1_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Hero2_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Hero2_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_Hero2_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_Hero2_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_Hero2_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Hero2_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_N01_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_N01_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_N01_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_N01_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_N01_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_N01_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_N02_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_N02_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_015"
+    ],
+    "NorthernMichigan_v17_N02_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_016"
+    ],
+    "NorthernMichigan_v17_N02_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_N02_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_N02_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_N03_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_N03_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_N03_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_N03_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_N03_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_N03_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_N04_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_N04_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_015"
+    ],
+    "NorthernMichigan_v17_N04_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_016"
+    ],
+    "NorthernMichigan_v17_N04_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_N04_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_N04_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_RetainedOriginalWood": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "NorthernMichigan_v17_W01_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W01_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_W01_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_W01_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_W01_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W01_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W02_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W02_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_W02_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_W02_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_W02_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W02_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W03_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W03_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_W03_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_W03_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_W03_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W03_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W04_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W04_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_W04_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_W04_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_W04_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W04_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W05_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W05_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_W05_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_W05_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_W05_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W05_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W06_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W06_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_W06_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_W06_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_W06_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W06_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W07_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W07_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_W07_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_W07_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_W07_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W07_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W08_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W08_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_W08_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_W08_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_W08_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W08_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W09_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W09_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_015"
+    ],
+    "NorthernMichigan_v17_W09_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_016"
+    ],
+    "NorthernMichigan_v17_W09_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_W09_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W09_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W10_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W10_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_W10_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_W10_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_W10_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W10_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W11_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W11_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_W11_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_W11_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_W11_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W11_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W12_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W12_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_015"
+    ],
+    "NorthernMichigan_v17_W12_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_016"
+    ],
+    "NorthernMichigan_v17_W12_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_W12_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W12_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W13_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W13_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_W13_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_W13_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_W13_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W13_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W14_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W14_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_W14_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_W14_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_W14_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W14_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W15_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_W15_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_W15_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_W15_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_W15_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_W15_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y01_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y01_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_Y01_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_Y01_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_Y01_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y01_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y02_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y02_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_Y02_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_Y02_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_Y02_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y02_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y03_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y03_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_Y03_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_Y03_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_Y03_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y03_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y04_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y04_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_015"
+    ],
+    "NorthernMichigan_v17_Y04_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_016"
+    ],
+    "NorthernMichigan_v17_Y04_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_Y04_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y04_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y05_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y05_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_Y05_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_Y05_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_Y05_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y05_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y06_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y06_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_Y06_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_Y06_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_Y06_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y06_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y07_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y07_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_Y07_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_Y07_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_Y07_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y07_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y08_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y08_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_Y08_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_Y08_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_Y08_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y08_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y09_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y09_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_011"
+    ],
+    "NorthernMichigan_v17_Y09_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_012"
+    ],
+    "NorthernMichigan_v17_Y09_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_013"
+    ],
+    "NorthernMichigan_v17_Y09_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y09_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y10_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y10_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_007"
+    ],
+    "NorthernMichigan_v17_Y10_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_008"
+    ],
+    "NorthernMichigan_v17_Y10_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_009"
+    ],
+    "NorthernMichigan_v17_Y10_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y10_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y11_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y11_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_015"
+    ],
+    "NorthernMichigan_v17_Y11_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_016"
+    ],
+    "NorthernMichigan_v17_Y11_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_Y11_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y11_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y12_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "NorthernMichigan_v17_Y12_Shoots_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_015"
+    ],
+    "NorthernMichigan_v17_Y12_Shoots_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_016"
+    ],
+    "NorthernMichigan_v17_Y12_Shoots_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_017"
+    ],
+    "NorthernMichigan_v17_Y12_SparseSnow": [
+      "CARRIAGE_LANDSCAPE_BATCH_010"
+    ],
+    "NorthernMichigan_v17_Y12_Trunk": [
+      "CARRIAGE_LANDSCAPE_BATCH_006"
+    ],
+    "Retreat v11 | south approach ground continuation": [
+      "CARRIAGE_LANDSCAPE_BATCH_018"
+    ],
+    "WinterWoodland_v15_T00_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T01_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T02_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T03_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T04_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T05_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T06_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T07_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T08_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T09_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T10_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T11_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T12_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "WinterWoodland_v15_T13_Branches": [
+      "CARRIAGE_LANDSCAPE_BATCH_005"
+    ],
+    "Woodland_BankStones_0": [
+      "CARRIAGE_LANDSCAPE_BATCH_019"
+    ],
+    "Woodland_BankStones_1": [
+      "CARRIAGE_LANDSCAPE_BATCH_020"
+    ],
+    "Woodland_BankStones_2": [
+      "CARRIAGE_LANDSCAPE_BATCH_021"
+    ],
+    "Woodland_ForestFloor": [
+      "CARRIAGE_LANDSCAPE_BATCH_018"
+    ],
+    "Woodland_SoftCreekBanks": [
+      "CARRIAGE_LANDSCAPE_BATCH_022"
+    ],
+    "Woodland_WaterSurface": [
+      "CARRIAGE_LANDSCAPE_BATCH_023"
+    ]
+  },
+  "water": {
+    "sourceObject": "Woodland_WaterSurface",
+    "batchNodes": [
+      "CARRIAGE_LANDSCAPE_BATCH_023"
+    ],
+    "surfaceName": "Woodland_WaterSurface",
+    "levelGltf": -0.285,
+    "nativeBoundsBlender": {
+      "min": [
+        -20.0,
+        -12.0,
+        -0.2849999964237213
+      ],
+      "max": [
+        22.0,
+        26.0,
+        -0.2849999964237213
+      ]
+    },
+    "pondCenterBlender": [
+      8,
+      13.4,
+      -0.285
+    ],
+    "pondCenterGltf": [
+      8,
+      -0.285,
+      -13.4
+    ],
+    "pondRadiiM": [
+      3.4,
+      2.35
+    ],
+    "streamCenterlineBlender": [
+      [
+        -20,
+        25,
+        -0.285
+      ],
+      [
+        -9,
+        22,
+        -0.285
+      ],
+      [
+        -1,
+        19,
+        -0.285
+      ],
+      [
+        4.3,
+        16.5,
+        -0.285
+      ],
+      [
+        8,
+        13.4,
+        -0.285
+      ],
+      [
+        12,
+        12.6,
+        -0.285
+      ],
+      [
+        15.3,
+        10.1,
+        -0.285
+      ],
+      [
+        16.5,
+        5,
+        -0.285
+      ],
+      [
+        21,
+        -11,
+        -0.285
+      ]
+    ],
+    "streamCenterlineGltf": [
+      [
+        -20,
+        -0.285,
+        -25
+      ],
+      [
+        -9,
+        -0.285,
+        -22
+      ],
+      [
+        -1,
+        -0.285,
+        -19
+      ],
+      [
+        4.3,
+        -0.285,
+        -16.5
+      ],
+      [
+        8,
+        -0.285,
+        -13.4
+      ],
+      [
+        12,
+        -0.285,
+        -12.6
+      ],
+      [
+        15.3,
+        -0.285,
+        -10.1
+      ],
+      [
+        16.5,
+        -0.285,
+        -5
+      ],
+      [
+        21,
+        -0.285,
+        11
+      ]
+    ],
+    "flowDirection": "Northwest to southeast / toward decreasing Blender Y",
+    "designMetadataSource": "web-assets/woodland-v10/woodland-manifest.json",
+    "designMetadataSha256": "65a51a04f6da0c384dbbd8a9d881522c0d406709336ec1a4eda21fa58aefe674",
+    "verification": "Water level checked against current evaluated native bounds; pond center checked against current triangles in landscape scope. Centerline/radii are original authored design coordinates, not a new fit or survey."
+  },
+  "snowMaterials": [
+    {
+      "snowRole": "gravel",
+      "sourceMaterial": "Retreat v11 | damp gravel drive",
+      "nativeMaterial": "Winter v15 | gravel | Retreat v11 | damp gravel drive",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    },
+    {
+      "snowRole": "dust",
+      "sourceMaterial": "Woodland v06 | rounded bank stone 2",
+      "nativeMaterial": "Winter v15 | dust | Woodland v06 | rounded bank stone 2",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    },
+    {
+      "snowRole": "dust",
+      "sourceMaterial": "Woodland v06 | rounded bank stone 0",
+      "nativeMaterial": "Winter v15 | dust | Woodland v06 | rounded bank stone 0",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    },
+    {
+      "snowRole": "dust",
+      "sourceMaterial": "Woodland v06 | rounded bank stone 1",
+      "nativeMaterial": "Winter v15 | dust | Woodland v06 | rounded bank stone 1",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    },
+    {
+      "snowRole": "dust",
+      "sourceMaterial": "Woodland v06 | wet ridged bark",
+      "nativeMaterial": "Winter v15 | dust | Woodland v06 | wet ridged bark",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    },
+    {
+      "snowRole": "pure-snow",
+      "sourceMaterial": "Carriage snow v15 | soft snow",
+      "nativeMaterial": "Carriage snow v15 | soft snow",
+      "snowTreatment": "pure-snow-pbr",
+      "snowApproximation": "Constant native snow Principled values retained; procedural bump is a reported fallback."
+    },
+    {
+      "snowRole": "bank",
+      "sourceMaterial": "Woodland v06 | rounded bank stone 0",
+      "nativeMaterial": "Winter v15 | bank | Woodland v06 | rounded bank stone 0",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    },
+    {
+      "snowRole": "bank",
+      "sourceMaterial": "Woodland v06 | rounded bank stone 1",
+      "nativeMaterial": "Winter v15 | bank | Woodland v06 | rounded bank stone 1",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    },
+    {
+      "snowRole": "bank",
+      "sourceMaterial": "Woodland v06 | rounded bank stone 2",
+      "nativeMaterial": "Winter v15 | bank | Woodland v06 | rounded bank stone 2",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    },
+    {
+      "snowRole": "bank",
+      "sourceMaterial": "Woodland v06 | exposed wet banks",
+      "nativeMaterial": "Winter v15 | bank | Woodland v06 | exposed wet banks",
+      "snowTreatment": "runtime-coating-required",
+      "snowApproximation": "World normal/position PBR overlay; native noise/MixBSDF appearance is not exported or claimed identical.",
+      "underlyingBranch": "Principled BSDF"
+    }
+  ],
+  "snowFidelity": "Recognized coating exports underlying maps plus explicit material extras. Host overlay approximates native MixBSDF and requires browser visual review.",
+  "fogSuggestion": {
+    "color": "#c8d4e1",
+    "colorLinear": [
+      0.5799999833106995,
+      0.6600000262260437,
+      0.75
+    ],
+    "near": 19,
+    "far": 57,
+    "status": "Runtime winter color proposal from current world background with inherited distance range; no exported volumetric equivalence."
+  },
+  "sourceSha256": "d5e7ac4bb2a8c94bf8a53c27f122b8d7811de0cc736f1f30f9c828aba05043f9",
+  "geometryAsset": "carriage-landscape-v15.glb"
+}

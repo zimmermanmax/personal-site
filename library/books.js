@@ -28,9 +28,28 @@ export function createBooks(scene,records,layout){
   spineMaterial.customProgramCacheKey=()=> 'library-spine-atlas-v1';
   const spines=new THREE.InstancedMesh(plane,spineMaterial,items.length);
   items.forEach((s,i)=>{dummy.position.fromArray(s.p);if(s.wall==='West'){dummy.position.x+=s.depth/2+.001;dummy.rotation.set(0,Math.PI/2,0);}else{dummy.position.z-=s.depth/2+.001;dummy.rotation.set(0,Math.PI,0);}dummy.scale.set(s.width,s.height,1);dummy.updateMatrix();spines.setMatrixAt(i,dummy.matrix);});
+  // Current reads use the same catalog instances, rotated onto the desk.
+  const deskDeltas=new Map(),coverLoader=new THREE.TextureLoader();
+  items.forEach((s,i)=>{
+    if(s.access!=='desk')return;
+    const p=new THREE.Vector3().fromArray(s.p),q=new THREE.Quaternion().fromArray(s.rotationGltf);
+    const delta=new THREE.Matrix4().makeTranslation(...s.p).multiply(new THREE.Matrix4().makeRotationFromQuaternion(q)).multiply(new THREE.Matrix4().makeTranslation(-p.x,-p.y,-p.z));
+    deskDeltas.set(i,delta);
+    for(const [mesh,stride] of [[volumes,1],[spines,1],[boards,2],[backs,1],[pages,1]])for(let j=0;j<stride;j++){
+      const index=i*stride+j,m=new THREE.Matrix4();mesh.getMatrixAt(index,m);mesh.setMatrixAt(index,m.premultiply(delta));mesh.instanceMatrix.needsUpdate=true;
+    }
+    if(s.book.cover){
+      const material=new THREE.MeshStandardMaterial({color:0xffffff,roughness:.83});
+      const cover=new THREE.Mesh(new THREE.PlaneGeometry(s.depth,s.height),material);
+      cover.position.set(s.width/2+.00001,0,0).applyQuaternion(q).add(p);
+      cover.quaternion.copy(q).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0),Math.PI/2));
+      cover.receiveShadow=true;cover.userData.bookId=s.bookId;scene.add(cover);
+      coverLoader.load(s.book.cover,t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4;material.map=t;material.needsUpdate=true;},undefined,()=>{cover.visible=false;});
+    }
+  });
   for(const mesh of [volumes,spines,boards,backs,pages]){mesh.receiveShadow=true;mesh.computeBoundingSphere();scene.add(mesh);}
   const highlight=new THREE.Box3Helper(new THREE.Box3(),0xdfcca5);highlight.visible=false;scene.add(highlight);
-  return {items,volumes,spines,highlight,select(index){if(index===null){highlight.visible=false;return;}const s=items[index],p=new THREE.Vector3().fromArray(s.p),d=new THREE.Vector3().fromArray(s.d).multiplyScalar(.55);highlight.box.set(p.clone().sub(d),p.clone().add(d));highlight.visible=true;}};
+  return {items,volumes,spines,boards,backs,pages,highlight,select(index){if(index===null){highlight.visible=false;return;}const s=items[index],p=new THREE.Vector3().fromArray(s.p),d=new THREE.Vector3().fromArray(s.d).multiplyScalar(.55);highlight.box.set(p.clone().sub(d),p.clone().add(d));if(deskDeltas.has(index))highlight.box.applyMatrix4(deskDeltas.get(index));highlight.visible=true;}};
 }
 export function createInspection(book,slot){
   const height=.76,width=height*(slot?slot.depth/slot.height:2/3),depth=height*(slot?slot.width/slot.height:.06),board=Math.min(.007,depth*.08),group=new THREE.Group();group.rotation.set(-.05,-.25,0);

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "version": "v18-retreat-review",
+  "sourceBlender": "library-retreat-v18-r2.blend",
+  "roomSourceSha256": "d5e7ac4bb2a8c94bf8a53c27f122b8d7811de0cc736f1f30f9c828aba05043f9",
+  "landscapeSourceSha256": "d5e7ac4bb2a8c94bf8a53c27f122b8d7811de0cc736f1f30f9c828aba05043f9",
+  "catalogCount": 967,
+  "movingDoorBookCount": 93,
+  "deskBookCount": 7,
+  "artworkStatus": {
+    "installed": [
+      "webber",
+      "remington",
+      "nasmith"
+    ],
+    "reserved": [
+      "marston-paj4097"
+    ]
+  },
+  "files": {
+    "assets/carriage-v18/room/carriage-room-v15-buffer-02.bin": {
+      "sha256": "10325d8bb907c2118ee7aad1ed1bc200794a46d6c101664bec7151523566892c",
+      "bytes": 17867464
+    },
+    "assets/carriage-v18/room/carriage-room-v15-buffer-00.bin": {
+      "sha256": "0ad241418d6da5ed99c4018b76def96e100aae53c6a66800a9dab5366be08a75",
+      "bytes": 20569764
+    },
+    "assets/carriage-v18/room/native-motion-samples.json": {
+      "sha256": "9a8eb6a4aae52694544ab866b11e85816b1657368431315336268247ad710e5b",
+      "bytes": 1127354
+    },
+    "assets/carriage-v18/room/carriage-room-v15-buffer-01.bin": {
+      "sha256": "63867f1f10329c4a7c9cbd893e3c8887fe7e1d502f6f527754c2d58937ee29aa",
+      "bytes": 20348624
+    },
+    "assets/carriage-v18/room/carriage-room-v15.gltf": {
+      "sha256": "4cac2a55513f0a13d6ee753d8cf46376ffaa5901b7e5590953330710bc755869",
+      "bytes": 1405535
+    },
+    "assets/carriage-v18/room/catalog-instance-transforms-v15.json": {
+      "sha256": "32fca9e243df7cc67f115e6261fdb48d9e6eb51c466285642b4e75cda678801b",
+      "bytes": 1819448
+    },
+    "assets/carriage-v18/room/environment-manifest-v15.json": {
+      "sha256": "f5ad36af0475d06a9f2e64542aaee647a6487995ebff034f54a84157920416fd",
+      "bytes": 249886
+    },
+    "assets/carriage-v18/room/movement-manifest.json": {
+      "sha256": "7fac72646aa1284d246510058663e433e9de45f5ce2b4dbba5cb235656e28a8a",
+      "bytes": 300199
+    },
+    "assets/carriage-v18/room/runtime-surfaces-v15.json": {
+      "sha256": "0f5ee72e9f4151ea4edfdfd74f0bd79e3cad4c349663ce61ee9fca7086f58332",
+      "bytes": 380
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-02.bin": {
+      "sha256": "ed12f4ed8b9bc26fa7b188364831be6cadb3c5f334f2ce00a0fa27c540a704a3",
+      "bytes": 20894324
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-03.bin": {
+      "sha256": "bd771c38841aba759051e1203e2136b6b7131c669b30f4ee89914d4f39888040",
+      "bytes": 14392456
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-01.bin": {
+      "sha256": "a5ea407c1cce1c546ed2653c1bd90f0bf76f57065054464e798ab217647e5fbc",
+      "bytes": 20942980
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15-buffer-00.bin": {
+      "sha256": "03cd7fac039a9dd4e3672128ca95d3ed832ee476bc75e06157ffc269846e8919",
+      "bytes": 20341968
+    },
+    "assets/carriage-v18/landscape/environment-manifest-v15.json": {
+      "sha256": "efc50c92cf9bbc85c706ce2b8adc62e7b2973385d0e403b378fa29b3c0eb9ee8",
+      "bytes": 94707
+    },
+    "assets/carriage-v18/landscape/carriage-landscape-v15.gltf": {
+      "sha256": "460d50b5a0c2aafe862d3cda8e2e8e27196cd356ce656ca01888c84ab210612f",
+      "bytes": 1293932
+    },
+    "assets/carriage-v18/landscape/runtime-surfaces-v15.json": {
+      "sha256": "a8af0cacc6e28374529fbe71898f83e7aa2eb62fb72c6bb10ccd4dda956ca2de",
+      "bytes": 4637844
+    },
+    "data/layout-v18.json": {
+      "sha256": "f0be2eb940ded50caf45410c0f14057fffbf736d56ae50d2e8cf3c26566e90a5",
+      "bytes": 2061587
+    },
+    "data/current-reads.json": {
+      "sha256": "c4842e8453b9238ba63a3e23fa376424f4b89868e2c0e68796f901415d053adf",
+      "bytes": 527
+    }
+  },
+  "browserReviewed": false,
+  "published": false,
+  "changes": [
+    "Broad reading gallery with45-degree chair and aligned footrest",
+    "45-degree foyer diamond tile pattern",
+    "Seven current-reading catalog books relocated to casual desk stacks with exact covers",
+    "Readwise connection verified and East of Eden highlights linked",
+    "219 additional trees in layered mixed woodland"
+  ],
+  "verification": {
+    "nativeSavedReopened": true,
+    "nativeViewsReviewed": true,
+    "decodedRoomGeometryAndImages": true,
+    "decodedLandscapeGeometryAndImages": true,
+    "bookMappingValidated": true,
+    "actualGeometryNavigationChecks": true,
+    "staticModuleChecks": true,
+    "browserReviewed": false,
+    "gpuReviewed": false,
+    "httpAssetsVerified": true,
+    "deskPoseAndShelfPackingChecks": true
+  },
+  "limits": [
+    "Current desk selection comes from the existing Goodreads shelf pending user clarification; Readwise activity does not establish current status.",
+    "Readwise connector snapshot and book link are integrated; no unattended website sync or credentials in frontend.",
+    "Native and source/data checks do not replace browser visual/performance review.",
+    "Close foliage remains stylized; original Marston image reservation and hosted release are unchanged."
+  ]
+}

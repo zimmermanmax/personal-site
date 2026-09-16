@@ -1,0 +1,18 @@
+{
+  "sectionLabels": {
+    "fiction-literature": "Fiction & Literature",
+    "history": "History",
+    "biography-memoir": "Biography & Memoir",
+    "exploration-travel": "Exploration & Travel",
+    "science-nature": "Science & Nature",
+    "philosophy-religion": "Philosophy & Religion",
+    "society-politics": "Society & Politics",
+    "economics-business": "Economics & Business",
+    "technology-mathematics": "Technology & Mathematics",
+    "arts-writing": "Arts & Writing",
+    "sports-games": "Sports & Games",
+    "family-personal-life": "Family & Personal Life",
+    "unclassified": "Classification Pending"
+  },
+  "classificationNote": "Proposed subject sections; source Goodreads records are unchanged."
+}

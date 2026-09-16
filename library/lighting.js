@@ -4,11 +4,11 @@ import { RectAreaLightUniformsLib } from 'three/addons/lights/RectAreaLightUnifo
 // Keep the previous rig available for an honest same-view finish comparison.
 export function createLighting(scene, camera, renderer, previous = false) {
   const lights = new THREE.Group();
-  lights.name = previous ? 'Original browser light' : 'Rainy daylight and warm reading lamps';
+  lights.name = previous ? 'Original browser light' : 'Winter daylight and warm reading lamps';
   renderer.toneMappingExposure = previous ? 1.22 : 1.12;
-  scene.background = new THREE.Color(previous ? 0x8e9a91 : 0x899b97);
-  scene.fog = new THREE.FogExp2(previous ? 0x8e9a91 : 0x899b97, previous ? .014 : .018);
-  lights.add(new THREE.HemisphereLight(0xdbe5e3, 0x776342, previous ? 2.1 : .72));
+  scene.background = new THREE.Color(previous ? 0x8e9a91 : 0xc8d4e1);
+  scene.fog = new THREE.FogExp2(previous ? 0x8e9a91 : 0xc8d4e1, previous ? .014 : .018);
+  lights.add(new THREE.HemisphereLight(0xe2e9f4, 0x776342, previous ? 2.1 : .78));
 
   const daylight = new THREE.DirectionalLight(0xdce7ed, previous ? 2.4 : 1.3);
   daylight.position.set(13, 13, -15);
@@ -28,7 +28,7 @@ export function createLighting(scene, camera, renderer, previous = false) {
   }
   if (!previous) {
     RectAreaLightUniformsLib.init();
-    // Large sources keep rainy daylight soft and reveal the leather's surface.
+    // Broad window sources bring soft winter daylight across the leather.
     for (const [p,target,w,h,intensity] of [[[4.8,3.1,-8.25],[4.8,1.2,-4],7.2,5.2,2.0], [[8.85,3.2,-4.5],[4.5,1.4,-4.5],6.4,5.1,1.25]]) {
       const window = new THREE.RectAreaLight(0xd6e2e3, intensity, w, h);
       window.position.fromArray(p);
@@ -46,6 +46,20 @@ export function createLighting(scene, camera, renderer, previous = false) {
     overhead.shadow.bias = -.0001;
     overhead.shadow.radius = 3;
     lights.add(overhead,overhead.target);
+    const porch = new THREE.PointLight(0xffd3a4, 7, 5, 2);
+    porch.position.set(4.92,2.62,2.24);
+    lights.add(porch);
+    // Aim the picture and favourites-case lights at their own surfaces.
+    for (const [p,target,width] of [
+      [[.55,3.27,-4.275],[.24,2.43,-4.275],1.9],
+      [[2.86,5.22,-.45],[2.86,4.65,-.15],1.9],
+      [[2.825,3.02,-.45],[2.825,2.51,-.15],.8],
+      [[6.55,2.56,-.45],[6.55,1.70,-.15],.85],
+      [[4.925,5.80,-.54],[4.925,4.7,-.28],.50],
+    ]) {
+      const picture = new THREE.RectAreaLight(0xffdfb9, 2.4, width, .06);
+      picture.position.fromArray(p);picture.lookAt(...target);lights.add(picture);
+    }
   }
   scene.add(lights);
   const inspection = new THREE.PointLight(0xffeed4,3,3,2);
