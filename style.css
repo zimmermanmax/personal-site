@@ -120,6 +120,28 @@ nav a:hover {
   color: var(--link-hover);
 }
 
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+}
+
+.site-nav a {
+  margin-right: 0;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--link-hover);
+  outline-offset: 4px;
+}
+
 /* Header */
 header {
   margin-bottom: 2rem;
@@ -212,4 +234,76 @@ footer a:hover {
 
 .favorites-list li strong {
   font-weight: 600;
+}
+
+ol.favorites-list {
+  list-style: decimal;
+  padding-left: 1.65rem;
+}
+
+ol.favorites-list li::marker {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.favorite-credit {
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/* Ideas: short notes, with links to their sources. */
+.ideas-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin: 1.25rem 0 0;
+}
+
+.ideas-jump a {
+  margin: 0;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.ideas-section {
+  scroll-margin-top: 1.5rem;
+}
+
+.ideas-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ideas-list li {
+  margin-bottom: 1.75rem;
+}
+
+.ideas-list h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 0.3rem;
+}
+
+.ideas-list h3 a {
+  text-decoration: underline;
+  text-decoration-color: var(--text-muted);
+  text-underline-offset: 0.2em;
+}
+
+.ideas-list p {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+}
+
+.ideas-list .idea-source,
+.ideas-section-note {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.ideas-list .idea-source {
+  margin: 0;
 }
