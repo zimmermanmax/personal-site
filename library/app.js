@@ -182,7 +182,7 @@ canvas.addEventListener('pointermove',e=>{if(!ready)return;hoverDirty=true;point
   const dx=locked?e.movementX:e.clientX-drag.lastX,dy=locked?e.movementY:e.clientY-drag.lastY;
   if(drag){drag.lastX=e.clientX;drag.lastY=e.clientY;drag.moved+=Math.abs(dx)+Math.abs(dy);}
   if(inspection){inspection.group.rotation.y+=dx*.008;inspection.group.rotation.x=THREE.MathUtils.clamp(inspection.group.rotation.x+dy*.008,-1.35,1.35);}
-  else{yaw-=dx*.003;pitch-=dy*.003;updateLook();}
+  else{const direction=locked?-1:1;yaw+=dx*.003*direction;pitch+=dy*.003*direction;updateLook();}
 });
 canvas.addEventListener('pointerup',e=>{if(!ready)return;if(drag&&drag.moved<8&&selected===null){pointer.set(e.clientX/innerWidth*2-1,-e.clientY/innerHeight*2+1);const index=pickBook();if(index!==null)selectBook(books.items[index].bookId);}drag=null;});
 canvas.addEventListener('pointercancel',()=>{drag=null;});
